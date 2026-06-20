@@ -1,6 +1,7 @@
 title: K4 Endurance
 description: Individuelles Trail- und Ultrarunning-Coaching mit K4 Endurance.
-url: "https://www.k4endurance.com"
+url: "https://k4endurance.github.io"
+baseurl: "/k4endurance"
 
 # Jekyll baut nur diese Dateien/Ordner, alles andere wird ignoriert
 include:
@@ -8,3 +9,17 @@ include:
 
 # Markdown-Verarbeitung (Standard bei GitHub Pages)
 markdown: kramdown
+
+# Blog-Einstellungen
+plugins:
+  - jekyll-paginate
+permalink: /blog/:year/:month/:day/:title/
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
