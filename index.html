@@ -1,0 +1,334 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K4 Endurance – Trail & Ultrarunning Coaching</title>
+  <meta name="description" content="{{ site.description }}" />
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* 1. Fonts */
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .title, .navbar-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase;
+    }
+
+    /* 2. Accent color */
+    .has-text-accent       { color: #e8380d; }
+    .has-background-accent { background-color: #e8380d; }
+    .button.is-accent      { background-color: #e8380d; border-color: transparent; color: #fff; }
+    .button.is-accent:hover { background-color: #c92e09; color: #fff; }
+
+    /* 3. Display title */
+    .display-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar is-white is-fixed-top has-shadow" role="navigation" aria-label="Hauptnavigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item title is-4 mb-0" href="#">
+          K4<span class="has-text-accent">.</span>Endurance
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#coach">Dein Coach</a>
+          <a class="navbar-item" href="#highlights">Highlights</a>
+          <a class="navbar-item" href="#tutorials">Plattform</a>
+          <a class="navbar-item" href="#pricing">Coaching-Pläne</a>
+          <div class="navbar-item">
+            <a href="#contact" class="button is-accent is-rounded">Kontakt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero is-light is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-7">
+            <p class="tag is-danger is-light is-medium mb-4">{{ site.data.home.hero.kicker }}</p>
+            <h1 class="display-title mb-5">
+              {{ site.data.home.hero.title_line1 }}<br />
+              <span class="has-text-accent">{{ site.data.home.hero.title_line2 }}</span><br />
+              {{ site.data.home.hero.title_line3 }}
+            </h1>
+            <p class="subtitle is-5 mb-6">
+              {{ site.data.home.hero.subtitle }}
+            </p>
+            <div class="buttons">
+              <a href="#contact" class="button is-accent is-medium is-rounded">Erstgespräch buchen</a>
+              <a href="#pricing" class="button is-medium is-rounded">Coaching-Pläne ansehen</a>
+            </div>
+          </div>
+          <div class="column is-4 is-offset-1 is-hidden-mobile">
+            <figure class="image is-3by4">
+              <img src="{{ site.data.home.hero.photo }}" alt="{{ site.data.home.coach.name }}" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Was wir bieten ── -->
+  <section class="section has-background-light">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <p class="tag is-danger is-light mb-4">{{ site.data.home.offer.kicker }}</p>
+          <h2 class="title is-1 mb-5">{{ site.data.home.offer.title }}</h2>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <div class="content is-medium">
+            <ul>
+              {% for item in site.data.home.offer.items %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Dein Coach ── -->
+  <section id="coach" class="section">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-4">
+          <figure class="image is-3by4">
+            <img src="{{ site.data.home.coach.photo }}" alt="{{ site.data.home.coach.name }}" />
+          </figure>
+        </div>
+        <div class="column is-7 is-offset-1">
+          <p class="tag is-danger is-light mb-4">{{ site.data.home.coach.kicker }}</p>
+          <h2 class="title is-1 mb-5">Ich bin<br />{{ site.data.home.coach.name }}.</h2>
+          <div class="content is-medium">
+            <p>{{ site.data.home.coach.bio_paragraph1 }}</p>
+            <p>{{ site.data.home.coach.bio_paragraph2 }}</p>
+          </div>
+          <div class="tags mt-5">
+            {% for tag in site.data.home.coach.tags %}
+            <span class="tag is-medium is-light">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Highlights ── -->
+  <section id="highlights" class="section has-background-light">
+    <div class="container">
+      <p class="tag is-danger is-light mb-4">{{ site.data.home.highlights.kicker }}</p>
+      <h2 class="title is-1 mb-6">{{ site.data.home.highlights.title }}</h2>
+
+      <div class="columns">
+        {% for h in site.data.home.highlights.items %}
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9 mb-4">
+              <img src="{{ h.photo }}" alt="{{ h.title }}" />
+            </figure>
+            <p class="title is-5 mb-1">{{ h.title }}</p>
+            <p class="subtitle is-6 has-text-accent">{{ h.category }}</p>
+            <p class="content">{{ h.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tutorials / Plattform ── -->
+  <section id="tutorials" class="section">
+    <div class="container">
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <p class="tag is-danger is-light mb-4">{{ site.data.home.tutorials.kicker }}</p>
+          <h2 class="title is-1">{{ site.data.home.tutorials.title }}</h2>
+        </div>
+        <div class="column is-narrow">
+          <p class="subtitle is-6" style="max-width: 320px;">
+            {{ site.data.home.tutorials.intro }}
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-multiline">
+        {% for t in site.data.home.tutorials.items %}
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">{{ t.title }}</p>
+            <p class="content">{{ t.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Coaching-Pläne ── -->
+  <section id="pricing" class="section has-background-light">
+    <div class="container">
+      <p class="tag is-danger is-light mb-4">{{ site.data.home.pricing.kicker }}</p>
+      <h2 class="title is-1 mb-6">{{ site.data.home.pricing.title }}</h2>
+
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <div class="box">
+            <p class="title is-4 mb-1">{{ site.data.home.pricing.basic.name }}</p>
+            <p class="mb-4">
+              <span class="title is-1">{{ site.data.home.pricing.basic.price }} €</span>
+              <span class="has-text-grey"> / Monat</span>
+            </p>
+            <div class="content">
+              <ul>
+                {% for item in site.data.home.pricing.basic.items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <a href="#contact" class="button is-fullwidth is-rounded">Jetzt anfragen</a>
+          </div>
+        </div>
+
+        <div class="column is-6 is-offset-1">
+          <div class="box has-background-accent">
+            <p class="tag is-white is-light mb-3">{{ site.data.home.pricing.premium.badge }}</p>
+            <p class="title is-4 has-text-white mb-1">{{ site.data.home.pricing.premium.name }}</p>
+            <p class="mb-4">
+              <span class="title is-1 has-text-white">{{ site.data.home.pricing.premium.price }} €</span>
+              <span class="has-text-white"> / Monat</span>
+            </p>
+            <div class="content has-text-white">
+              <ul>
+                {% for item in site.data.home.pricing.premium.items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <a href="#contact" class="button is-white is-fullwidth is-rounded">
+              <strong>Jetzt anfragen</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Kontakt ── -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-5">
+          <p class="tag is-danger is-light mb-4">{{ site.data.home.contact.kicker }}</p>
+          <h2 class="title is-1 mb-5">{{ site.data.home.contact.title }}</h2>
+          <div class="content">
+            <p>{{ site.data.home.contact.text }}</p>
+            <p>
+              📧 <a href="mailto:{{ site.data.home.contact.email }}" class="has-text-accent">{{ site.data.home.contact.email }}</a><br />
+              📍 {{ site.data.home.contact.location }}
+            </p>
+          </div>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <!-- Formspree: action="https://formspree.io/f/DEINE_ID" method="POST" -->
+          <form onsubmit="return false;">
+            <div class="field">
+              <label class="label" for="f-name">Name</label>
+              <div class="control">
+                <input class="input is-medium" type="text" id="f-name" placeholder="Max Mustermann" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="f-email">E-Mail</label>
+              <div class="control">
+                <input class="input is-medium" type="email" id="f-email" placeholder="max@beispiel.de" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="f-goal">Dein Ziel</label>
+              <div class="control">
+                <input class="input is-medium" type="text" id="f-goal" placeholder="z.B. mein erster 100-Meilen-Trail" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="f-message">Nachricht</label>
+              <div class="control">
+                <textarea class="textarea is-medium" id="f-message" rows="4"
+                  placeholder="Erzähl mir mehr über dich und wo du gerade stehst …"></textarea>
+              </div>
+            </div>
+            <div class="field mt-5">
+              <div class="control">
+                <button class="button is-accent is-medium is-rounded" type="submit">Nachricht senden</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer has-background-dark">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <p class="title is-5 has-text-white mb-0">
+            K4<span class="has-text-accent">.</span>Endurance
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="has-text-grey-light is-size-7">{{ site.data.home.footer.copyright }}</p>
+        </div>
+        <div class="column has-text-right">
+          <a href="#" class="has-text-grey-light is-size-7 mr-4">Impressum</a>
+          <a href="{{ site.data.home.footer.privacy_url }}" class="has-text-grey-light is-size-7">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.navbar-burger').forEach(burger => {
+      burger.addEventListener('click', () => {
+        const target = document.getElementById(burger.dataset.target);
+        burger.classList.toggle('is-active');
+        target.classList.toggle('is-active');
+      });
+    });
+  </script>
+</body>
+</html>
