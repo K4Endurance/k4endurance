@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K4 Endurance – Trail & Ultrarunning Coaching</title>
+  <meta name="description" content="Individuelles Trail- und Ultrarunning-Coaching mit K4 Endurance. Bring dich fit, gesund und glücklich an die Startlinie." />
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* 1. Fonts */
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .title, .navbar-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase;
+    }
+
+    /* 2. Accent color */
+    .has-text-accent       { color: #e8380d; }
+    .has-background-accent { background-color: #e8380d; }
+    .button.is-accent      { background-color: #e8380d; border-color: transparent; color: #fff; }
+    .button.is-accent:hover { background-color: #c92e09; color: #fff; }
+
+    /* 3. Display title */
+    .display-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar is-white is-fixed-top has-shadow" role="navigation" aria-label="Hauptnavigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item title is-4 mb-0" href="#">
+          K4<span class="has-text-accent">.</span>Endurance
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#coach">Dein Coach</a>
+          <a class="navbar-item" href="#highlights">Highlights</a>
+          <a class="navbar-item" href="#tutorials">Plattform</a>
+          <a class="navbar-item" href="#pricing">Coaching-Pläne</a>
+          <div class="navbar-item">
+            <a href="#contact" class="button is-accent is-rounded">Kontakt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero is-light is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-7">
+            <p class="tag is-danger is-light is-medium mb-4">K4 Endurance</p>
+            <h1 class="display-title mb-5">
+              Fitter.<br />
+              <span class="has-text-accent">Glücklicher.</span><br />
+              An der Startlinie.
+            </h1>
+            <p class="subtitle is-5 mb-6">
+              K4 Endurance bringt dich in deiner fittesten, gesündesten und
+              glücklichsten Verfassung an die Startlinie deines Trail- oder
+              Ultra-Ziels.
+            </p>
+            <div class="buttons">
+              <a href="#contact" class="button is-accent is-medium is-rounded">Erstgespräch buchen</a>
+              <a href="#pricing" class="button is-medium is-rounded">Coaching-Pläne ansehen</a>
+            </div>
+          </div>
+          <div class="column is-4 is-offset-1 is-hidden-mobile">
+            <figure class="image is-3by4">
+              <!-- Ersetze durch dein eigenes Foto -->
+              <img src="https://placehold.co/600x800/e5e1db/aaa?text=Dein+Foto" alt="Foto Platzhalter" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Was wir bieten ── -->
+  <section class="section has-background-light">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <p class="tag is-danger is-light mb-4">Unsere Plattform</p>
+          <h2 class="title is-1 mb-5">Was K4 Endurance bietet</h2>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <div class="content is-medium">
+            <ul>
+              <li>Personalisierte, dynamische Trainingspläne für dein Trail- oder Ultra-Ziel</li>
+              <li>Smarte Workouts, die deine verfügbare Trainingszeit optimal nutzen</li>
+              <li>Tutorials zu Verletzungsprävention, Kraft- und Rumpfstabilität</li>
+              <li>Trail-running-spezifische Beratung und Clinics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Dein Coach ── -->
+  <section id="coach" class="section">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-4">
+          <figure class="image is-3by4">
+            <!-- Ersetze durch dein eigenes Foto -->
+            <img src="https://placehold.co/600x800/e5e1db/aaa?text=Dein+Foto" alt="Dein Coach" />
+          </figure>
+        </div>
+        <div class="column is-7 is-offset-1">
+          <p class="tag is-danger is-light mb-4">Dein Coach</p>
+          <h2 class="title is-1 mb-5">Ich bin<br />[Dein Name].</h2>
+          <div class="content is-medium">
+            <p>
+              [Platzhalter: Kurzbeschreibung deiner Laufkarriere und Erfahrung —
+              z.B. Jahre als aktiver Trail- und Ultraläufer, Rennen, persönliche
+              Bestleistungen, sportlicher Hintergrund.]
+            </p>
+            <p>
+              Nach unzähligen Trainingskilometern und eigenen Fehlern habe ich
+              K4 Endurance gegründet, um dich genau diese Fehler zu ersparen —
+              und dich fit, gesund und glücklich an deine Startlinie zu bringen.
+            </p>
+          </div>
+          <div class="tags mt-5">
+            <span class="tag is-medium is-light">Trail Running</span>
+            <span class="tag is-medium is-light">Ultramarathon</span>
+            <span class="tag is-medium is-light">Bergläufe</span>
+            <span class="tag is-medium is-light">Regeneration</span>
+            <span class="tag is-medium is-light">Ernährungsstrategie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Highlights ── -->
+  <section id="highlights" class="section has-background-light">
+    <div class="container">
+      <p class="tag is-danger is-light mb-4">Highlights</p>
+      <h2 class="title is-1 mb-6">Meilensteine</h2>
+
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9 mb-4">
+              <img src="https://placehold.co/500x280/e5e1db/aaa?text=Highlight+1" alt="Highlight 1" />
+            </figure>
+            <p class="title is-5 mb-1">[Highlight 1]</p>
+            <p class="subtitle is-6 has-text-accent">[Kategorie / Jahr]</p>
+            <p class="content">
+              [Platzhalter: Beschreibung dieses Meilensteins — Rennen, Rekord
+              oder besondere Leistung.]
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9 mb-4">
+              <img src="https://placehold.co/500x280/e5e1db/aaa?text=Highlight+2" alt="Highlight 2" />
+            </figure>
+            <p class="title is-5 mb-1">[Highlight 2]</p>
+            <p class="subtitle is-6 has-text-accent">[Kategorie / Jahr]</p>
+            <p class="content">
+              [Platzhalter: Beschreibung dieses Meilensteins — Rennen, Rekord
+              oder besondere Leistung.]
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9 mb-4">
+              <img src="https://placehold.co/500x280/e5e1db/aaa?text=Highlight+3" alt="Highlight 3" />
+            </figure>
+            <p class="title is-5 mb-1">[Highlight 3]</p>
+            <p class="subtitle is-6 has-text-accent">[Kategorie / Jahr]</p>
+            <p class="content">
+              [Platzhalter: Beschreibung dieses Meilensteins — Rennen, Rekord
+              oder besondere Leistung.]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tutorials / Plattform ── -->
+  <section id="tutorials" class="section">
+    <div class="container">
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <p class="tag is-danger is-light mb-4">Wissen</p>
+          <h2 class="title is-1">Tutorials auf Top-Niveau</h2>
+        </div>
+        <div class="column is-narrow">
+          <p class="subtitle is-6" style="max-width: 320px;">
+            Zugang zu Tutorials aus mehreren Bereichen, speziell für Trail-
+            und Ultrarunning entwickelt.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-multiline">
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">Trainingsansatz</p>
+            <p class="content">Das Wie und Warum deines evidenzbasierten Trainings, verständlich erklärt.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">Verletzungsprävention</p>
+            <p class="content">Übungen für Kraft, Rumpfstabilität und nachhaltige Belastbarkeit.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">Lauftechnik</p>
+            <p class="content">Trail, Anstieg, Abstieg — Technik für jedes Gelände.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">Ernährung & Hydration</p>
+            <p class="content">Strategien für lange Belastungen und Wettkampftage.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">Mentale Stärke</p>
+            <p class="content">Umgang mit Krisen, Umgebung und dem Renntag selbst.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="box">
+            <p class="title is-5">Material & Ausrüstung</p>
+            <p class="content">Was du wirklich brauchst — und was nicht.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Coaching-Pläne ── -->
+  <section id="pricing" class="section has-background-light">
+    <div class="container">
+      <p class="tag is-danger is-light mb-4">Coaching-Pläne</p>
+      <h2 class="title is-1 mb-6">Für jeden Trail- und Ultraläufer</h2>
+
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <div class="box">
+            <p class="title is-4 mb-1">Basic</p>
+            <p class="mb-4">
+              <span class="title is-1">[XX] €</span>
+              <span class="has-text-grey"> / Monat</span>
+            </p>
+            <div class="content">
+              <ul>
+                <li>Personalisierte Trainingspläne</li>
+                <li>Anpassungen in Echtzeit auf Basis deines Feedbacks</li>
+                <li>Tutorials zu Verletzungsprävention & Kraft</li>
+                <li>Dein evidenzbasierter Trainingsansatz erklärt</li>
+              </ul>
+            </div>
+            <a href="#contact" class="button is-fullwidth is-rounded">Jetzt anfragen</a>
+          </div>
+        </div>
+
+        <div class="column is-6 is-offset-1">
+          <div class="box has-background-accent">
+            <p class="tag is-white is-light mb-3">Limitiertes Angebot</p>
+            <p class="title is-4 has-text-white mb-1">Premium</p>
+            <p class="mb-4">
+              <span class="title is-1 has-text-white">[YY] €</span>
+              <span class="has-text-white"> / Monat</span>
+            </p>
+            <div class="content has-text-white">
+              <ul>
+                <li>Alles aus Basic</li>
+                <li>Echtzeit-Anpassung auf Basis genauer Datenanalyse</li>
+                <li>Volle Tutorial- & Clinic-Bibliothek</li>
+                <li>Direkter 1:1-Austausch mit deinem Coach</li>
+              </ul>
+            </div>
+            <a href="#contact" class="button is-white is-fullwidth is-rounded">
+              <strong>Jetzt anfragen</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Kontakt ── -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-5">
+          <p class="tag is-danger is-light mb-4">Kontakt</p>
+          <h2 class="title is-1 mb-5">Lass uns reden.</h2>
+          <div class="content">
+            <p>
+              Das erste Gespräch ist kostenlos und unverbindlich. Erzähl mir von deinem Ziel —
+              und wir schauen gemeinsam, wie K4 Endurance dich dahin bringt.
+            </p>
+            <p>
+              📧 <a href="mailto:hallo@k4endurance.com" class="has-text-accent">hallo@k4endurance.com</a><br />
+              📍 Las Palmas de Gran Canaria, Spanien
+            </p>
+          </div>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <!-- Formspree: action="https://formspree.io/f/DEINE_ID" method="POST" -->
+          <form onsubmit="return false;">
+            <div class="field">
+              <label class="label" for="f-name">Name</label>
+              <div class="control">
+                <input class="input is-medium" type="text" id="f-name" placeholder="Max Mustermann" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="f-email">E-Mail</label>
+              <div class="control">
+                <input class="input is-medium" type="email" id="f-email" placeholder="max@beispiel.de" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="f-goal">Dein Ziel</label>
+              <div class="control">
+                <input class="input is-medium" type="text" id="f-goal" placeholder="z.B. mein erster 100-Meilen-Trail" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="f-message">Nachricht</label>
+              <div class="control">
+                <textarea class="textarea is-medium" id="f-message" rows="4"
+                  placeholder="Erzähl mir mehr über dich und wo du gerade stehst …"></textarea>
+              </div>
+            </div>
+            <div class="field mt-5">
+              <div class="control">
+                <button class="button is-accent is-medium is-rounded" type="submit">Nachricht senden</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer has-background-dark">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <p class="title is-5 has-text-white mb-0">
+            K4<span class="has-text-accent">.</span>Endurance
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="has-text-grey-light is-size-7">© 2025 K4 Endurance. Alle Rechte vorbehalten.</p>
+        </div>
+        <div class="column has-text-right">
+          <a href="#" class="has-text-grey-light is-size-7 mr-4">Impressum</a>
+          <a href="https://www.k4endurance.com/datenschutz" class="has-text-grey-light is-size-7">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Bulma burger menu toggle
+    document.querySelectorAll('.navbar-burger').forEach(burger => {
+      burger.addEventListener('click', () => {
+        const target = document.getElementById(burger.dataset.target);
+        burger.classList.toggle('is-active');
+        target.classList.toggle('is-active');
+      });
+    });
+  </script>
+</body>
+</html>
