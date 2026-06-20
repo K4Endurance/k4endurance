@@ -1,99 +1,62 @@
-# Diese Datei wird über PagesCMS bearbeitet.
-# Alle Inhalte hier landen automatisch auf der Seite.
-
 hero:
-  kicker: "K4 Endurance"
-  title_line1: "Fitter."
-  title_line2: "Glücklicher."
-  title_line3: "An der Startlinie."
-  subtitle: "K4 Endurance bringt dich in deiner fittesten, gesündesten und glücklichsten Verfassung an die Startlinie deines Trail- oder Ultra-Ziels."
-  photo: "/assets/images/hero-photo.jpg"
-
+  kicker: K4Endurance
+  title_line1: Fitter.
+  title_line2: Glücklicher.
+  title_line3: An der Startlinie.
+  subtitle: K4 Endurance bringt dich in deiner fittesten, gesündesten und
+    glücklichsten Verfassung an die Startlinie deines Trail- oder Ultra-Ziels.
+  photo: /assets/images/hero-photo.jpg
 offer:
-  kicker: "Unsere Plattform"
-  title: "Was K4 Endurance bietet"
-  items:
-    - "Personalisierte, dynamische Trainingspläne für dein Trail- oder Ultra-Ziel"
-    - "Smarte Workouts, die deine verfügbare Trainingszeit optimal nutzen"
-    - "Tutorials zu Verletzungsprävention, Kraft- und Rumpfstabilität"
-    - "Trail-running-spezifische Beratung und Clinics"
-
+  kicker: Unsere Plattform
+  title: Was K4 Endurance bietet
+  items: Personalisierte, dynamische Trainingspläne für dein Trail- oder
+    Ultra-Ziel,Smarte Workouts, die deine verfügbare Trainingszeit optimal
+    nutzen,Tutorials zu Verletzungsprävention, Kraft- und
+    Rumpfstabilität,Trail-running-spezifische Beratung und Clinics.
 coach:
-  kicker: "Dein Coach"
+  kicker: Dein Coach
   name: "[Dein Name]"
-  photo: "/assets/images/coach-photo.jpg"
-  bio_paragraph1: "[Platzhalter: Kurzbeschreibung deiner Laufkarriere und Erfahrung — z.B. Jahre als aktiver Trail- und Ultraläufer, Rennen, persönliche Bestleistungen, sportlicher Hintergrund.]"
-  bio_paragraph2: "Nach unzähligen Trainingskilometern und eigenen Fehlern habe ich K4 Endurance gegründet, um dich genau diese Fehler zu ersparen — und dich fit, gesund und glücklich an deine Startlinie zu bringen."
-  tags:
-    - "Trail Running"
-    - "Ultramarathon"
-    - "Bergläufe"
-    - "Regeneration"
-    - "Ernährungsstrategie"
-
+  photo: /assets/images/coach-photo.jpg
+  bio_paragraph1: "[Platzhalter: Kurzbeschreibung deiner Laufkarriere und
+    Erfahrung — z.B. Jahre als aktiver Trail- und Ultraläufer, Rennen,
+    persönliche Bestleistungen, sportlicher Hintergrund.]"
+  bio_paragraph2: Nach unzähligen Trainingskilometern und eigenen Fehlern habe ich
+    K4 Endurance gegründet, um dich genau diese Fehler zu ersparen — und dich
+    fit, gesund und glücklich an deine Startlinie zu bringen.
+  tags: Trail Running,Ultramarathon,Bergläufe,Regeneration,Ernährungsstrategie.
 highlights:
-  kicker: "Highlights"
-  title: "Meilensteine"
-  items:
-    - title: "[Highlight 1]"
-      category: "[Kategorie / Jahr]"
-      description: "[Platzhalter: Beschreibung dieses Meilensteins — Rennen, Rekord oder besondere Leistung.]"
-      photo: "/assets/images/highlight-1.jpg"
-    - title: "[Highlight 2]"
-      category: "[Kategorie / Jahr]"
-      description: "[Platzhalter: Beschreibung dieses Meilensteins — Rennen, Rekord oder besondere Leistung.]"
-      photo: "/assets/images/highlight-2.jpg"
-    - title: "[Highlight 3]"
-      category: "[Kategorie / Jahr]"
-      description: "[Platzhalter: Beschreibung dieses Meilensteins — Rennen, Rekord oder besondere Leistung.]"
-      photo: "/assets/images/highlight-3.jpg"
-
+  kicker: Highlights
+  title: Meilensteine
+  items: "[object Object],[object Object],[object Object]"
 tutorials:
-  kicker: "Wissen"
-  title: "Tutorials auf Top-Niveau"
-  intro: "Zugang zu Tutorials aus mehreren Bereichen, speziell für Trail- und Ultrarunning entwickelt."
-  items:
-    - title: "Trainingsansatz"
-      description: "Das Wie und Warum deines evidenzbasierten Trainings, verständlich erklärt."
-    - title: "Verletzungsprävention"
-      description: "Übungen für Kraft, Rumpfstabilität und nachhaltige Belastbarkeit."
-    - title: "Lauftechnik"
-      description: "Trail, Anstieg, Abstieg — Technik für jedes Gelände."
-    - title: "Ernährung & Hydration"
-      description: "Strategien für lange Belastungen und Wettkampftage."
-    - title: "Mentale Stärke"
-      description: "Umgang mit Krisen, Umgebung und dem Renntag selbst."
-    - title: "Material & Ausrüstung"
-      description: "Was du wirklich brauchst — und was nicht."
-
+  kicker: Wissen
+  title: Tutorials auf Top-Niveau
+  intro: Zugang zu Tutorials aus mehreren Bereichen, speziell für Trail- und
+    Ultrarunning entwickelt.
+  items: "[object Object],[object Object],[object Object],[object Object],[object
+    Object],[object Object]"
 pricing:
-  kicker: "Coaching-Pläne"
-  title: "Für jeden Trail- und Ultraläufer"
+  kicker: Coaching-Pläne
+  title: Für jeden Trail- und Ultraläufer
   basic:
-    name: "Basic"
-    price: "XX"
-    items:
-      - "Personalisierte Trainingspläne"
-      - "Anpassungen in Echtzeit auf Basis deines Feedbacks"
-      - "Tutorials zu Verletzungsprävention & Kraft"
-      - "Dein evidenzbasierter Trainingsansatz erklärt"
+    name: Basic
+    price: XX
+    items: Personalisierte Trainingspläne,Anpassungen in Echtzeit auf Basis deines
+      Feedbacks,Tutorials zu Verletzungsprävention & Kraft,Dein evidenzbasierter
+      Trainingsansatz erklärt.
   premium:
-    name: "Premium"
-    badge: "Limitiertes Angebot"
-    price: "YY"
-    items:
-      - "Alles aus Basic"
-      - "Echtzeit-Anpassung auf Basis genauer Datenanalyse"
-      - "Volle Tutorial- & Clinic-Bibliothek"
-      - "Direkter 1:1-Austausch mit deinem Coach"
-
+    name: Premium
+    badge: Limitiertes Angebot
+    price: YY
+    items: Alles aus Basic,Echtzeit-Anpassung auf Basis genauer Datenanalyse,Volle
+      Tutorial- & Clinic-Bibliothek,Direkter 1:1-Austausch mit deinem Coach
 contact:
-  kicker: "Kontakt"
-  title: "Lass uns reden."
-  text: "Das erste Gespräch ist kostenlos und unverbindlich. Erzähl mir von deinem Ziel — und wir schauen gemeinsam, wie K4 Endurance dich dahin bringt."
-  email: "hallo@k4endurance.com"
-  location: "Las Palmas de Gran Canaria, Spanien"
-
+  kicker: Kontakt
+  title: Lass uns reden.
+  text: Das erste Gespräch ist kostenlos und unverbindlich. Erzähl mir von deinem
+    Ziel — und wir schauen gemeinsam, wie K4 Endurance dich dahin bringt.
+  email: hallo@k4endurance.com
+  location: Las Palmas de Gran Canaria, Spanien
 footer:
-  copyright: "© 2025 K4 Endurance. Alle Rechte vorbehalten."
-  privacy_url: "https://www.k4endurance.com/datenschutz"
+  copyright: © 2025 K4 Endurance. Alle Rechte vorbehalten.
+  privacy_url: https://www.k4endurance.com/datenschutz
