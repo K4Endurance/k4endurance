@@ -3,6 +3,25 @@ media:
   output: /assets/images
 
 content:
+  - name: posts
+    label: "Blog-Artikel"
+    type: collection
+    path: '_posts'
+    view:
+      fields: [title, date, category]
+    fields:
+      - { name: date, label: "Datum", type: date }
+      - { name: title, label: "Titel", type: string }
+      - name: category
+        label: "Kategorie"
+        type: select
+        options:
+          values: ["Training", "Ernährung", "Mentale Stärke", "Material", "Sonstiges"]
+      - { name: author, label: "Autor", type: string }
+      - { name: image, label: "Titelbild", type: image }
+      - { name: excerpt, label: "Kurzbeschreibung (für Übersicht)", type: text }
+      - { name: body, label: "Artikeltext", type: rich-text }
+
   - name: home
     label: "Startseite"
     type: file
