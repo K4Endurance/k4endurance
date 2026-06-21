@@ -1,6 +1,9 @@
 ---
 date: 2026-06-21
 title: PlyoRechner
+category: Training
+author: Karsten
+excerpt: Plyorechner
 ---
 **# Der Plymetrics Rechner**
 
