@@ -1,0 +1,136 @@
+---
+layout: null
+permalink: /tools/
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rechner – K4 Endurance</title>
+  <meta name="description" content="Praktische Trainingsrechner von K4 Endurance." />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .title, .navbar-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase;
+    }
+    .has-text-accent       { color: #e8380d; }
+    .has-background-accent { background-color: #e8380d; }
+    .button.is-accent      { background-color: #e8380d; border-color: transparent; color: #fff; }
+    .button.is-accent:hover { background-color: #c92e09; color: #fff; }
+    .display-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar is-white is-fixed-top has-shadow" role="navigation" aria-label="Hauptnavigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item title is-4 mb-0" href="/">
+          K4<span class="has-text-accent">.</span>Endurance
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/#coach">Dein Coach</a>
+          <a class="navbar-item" href="/blog/">Blog</a>
+          <a class="navbar-item" href="/tools/">Rechner</a>
+          <a class="navbar-item" href="/#pricing">Coaching-Pläne</a>
+          <div class="navbar-item">
+            <a href="/#contact" class="button is-accent is-rounded">Kontakt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Header ── -->
+  <section class="hero is-light" style="margin-top: 52px;">
+    <div class="hero-body">
+      <div class="container">
+        <p class="tag is-danger is-light mb-4">{{ site.data.rechner.intro.kicker }}</p>
+        <h1 class="display-title mb-4">{{ site.data.rechner.intro.title }}</h1>
+        <p class="subtitle is-6 has-text-grey" style="max-width: 560px;">
+          {{ site.data.rechner.intro.text }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Rechner-Liste ── -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        {% for tool in site.data.rechner.items %}
+        <div class="column is-4">
+          <div class="box" style="height:100%; display:flex; flex-direction:column;">
+            <p class="title is-2 mb-3">{{ tool.icon }}</p>
+            <p class="title is-5 mb-2">{{ tool.title }}</p>
+            <p class="content" style="flex-grow:1;">{{ tool.description }}</p>
+
+            {% if tool.status == "live" %}
+              <a href="{{ tool.url }}" class="button is-accent is-fullwidth is-rounded">Rechner öffnen</a>
+            {% else %}
+              <button class="button is-fullwidth is-rounded" disabled>{{ tool.status | capitalize }}</button>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% if site.data.rechner.items.size == 0 %}
+      <p class="has-text-grey">Bald findest du hier die ersten Rechner.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer has-background-dark">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <p class="title is-5 has-text-white mb-0">
+            K4<span class="has-text-accent">.</span>Endurance
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="has-text-grey-light is-size-7">{{ site.data.home.footer.copyright }}</p>
+        </div>
+        <div class="column has-text-right">
+          <a href="/" class="has-text-grey-light is-size-7 mr-4">Startseite</a>
+          <a href="{{ site.data.home.footer.privacy_url }}" class="has-text-grey-light is-size-7">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.navbar-burger').forEach(burger => {
+      burger.addEventListener('click', () => {
+        const target = document.getElementById(burger.dataset.target);
+        burger.classList.toggle('is-active');
+        target.classList.toggle('is-active');
+      });
+    });
+  </script>
+</body>
+</html>

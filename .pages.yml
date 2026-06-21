@@ -22,6 +22,32 @@ content:
       - { name: excerpt, label: "Kurzbeschreibung (für Übersicht)", type: text }
       - { name: body, label: "Artikeltext", type: rich-text }
 
+  - name: rechner
+    label: "Rechner"
+    type: file
+    path: _data/rechner.yml
+    fields:
+      - name: intro
+        label: "Einleitung"
+        type: object
+        fields:
+          - { name: kicker, label: "Vorzeile", type: string }
+          - { name: title, label: "Titel", type: string }
+          - { name: text, label: "Beschreibungstext", type: text }
+      - name: items
+        label: "Rechner-Liste"
+        type: list
+        fields:
+          - { name: title, label: "Name des Rechners", type: string }
+          - { name: description, label: "Beschreibung", type: text }
+          - { name: url, label: "Link (z.B. /tools/mein-rechner/)", type: string }
+          - { name: icon, label: "Emoji-Icon", type: string }
+          - name: status
+            label: "Status"
+            type: select
+            options:
+              values: ["live", "bald verfügbar"]
+
   - name: home
     label: "Startseite"
     type: file

@@ -1,0 +1,20 @@
+# Diese Datei wird über PagesCMS bearbeitet (Bereich "Rechner").
+# Neue Rechner einfach als weiteren Listeneintrag hinzufügen.
+
+intro:
+  kicker: "Rechner"
+  title: "Tools für dein Training"
+  text: "Eine wachsende Sammlung praktischer Rechner, die dir helfen, dein Training datenbasiert zu planen."
+
+items:
+  - title: "Plyometrics-Rechner"
+    description: "Berechnet Belastungsumfang und progressive Steigerung für plyometrisches Training, basierend auf deinem aktuellen Niveau."
+    url: "/tools/plyometrics-rechner/"
+    icon: "🦵"
+    status: "live"
+
+  - title: "Volumenprogressions-Rechner"
+    description: "Plant die schrittweise Steigerung deines Trainingsvolumens über mehrere Wochen, um Überlastung zu vermeiden."
+    url: "/tools/volumenprogressions-rechner/"
+    icon: "📈"
+    status: "bald verfügbar"
