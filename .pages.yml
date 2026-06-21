@@ -36,7 +36,8 @@ content:
           - { name: text, label: "Beschreibungstext", type: text }
       - name: items
         label: "Rechner-Liste"
-        type: list
+        type: object
+        list: true
         fields:
           - { name: title, label: "Name des Rechners", type: string }
           - { name: description, label: "Beschreibung", type: text }
@@ -72,8 +73,8 @@ content:
           - { name: title, label: "Titel", type: string }
           - name: items
             label: "Stichpunkte"
-            type: list
-            field: { type: string }
+            type: string
+            list: true
 
       - name: coach
         label: "Dein Coach"
@@ -86,8 +87,8 @@ content:
           - { name: bio_paragraph2, label: "Bio – Absatz 2", type: text }
           - name: tags
             label: "Schlagworte"
-            type: list
-            field: { type: string }
+            type: string
+            list: true
 
       - name: highlights
         label: "Highlights / Meilensteine"
@@ -97,7 +98,8 @@ content:
           - { name: title, label: "Titel", type: string }
           - name: items
             label: "Meilensteine"
-            type: list
+            type: object
+            list: true
             fields:
               - { name: title, label: "Titel", type: string }
               - { name: category, label: "Kategorie / Jahr", type: string }
@@ -113,7 +115,8 @@ content:
           - { name: intro, label: "Einleitungstext", type: text }
           - name: items
             label: "Tutorial-Themen"
-            type: list
+            type: object
+            list: true
             fields:
               - { name: title, label: "Titel", type: string }
               - { name: description, label: "Beschreibung", type: text }
@@ -132,8 +135,8 @@ content:
               - { name: price, label: "Preis (Zahl, ohne €)", type: string }
               - name: items
                 label: "Leistungen"
-                type: list
-                field: { type: string }
+                type: string
+                list: true
           - name: premium
             label: "Plan: Premium"
             type: object
@@ -143,8 +146,8 @@ content:
               - { name: price, label: "Preis (Zahl, ohne €)", type: string }
               - name: items
                 label: "Leistungen"
-                type: list
-                field: { type: string }
+                type: string
+                list: true
 
       - name: contact
         label: "Kontakt"
