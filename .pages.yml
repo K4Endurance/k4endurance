@@ -7,6 +7,7 @@ content:
     label: "Blog-Artikel"
     type: collection
     path: '_posts'
+    filename: '{year}-{month}-{day}-{fields.title}.md'
     view:
       fields: [title, date, category]
     fields:
