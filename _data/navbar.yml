@@ -1,0 +1,21 @@
+# Diese Datei wird über PagesCMS bearbeitet (Bereich "Navigation").
+# Reihenfolge der Liste = Reihenfolge in der Navbar.
+# style "button" zeigt den Eintrag als hervorgehobenen Button (z.B. für Kontakt),
+# style "link" zeigt ihn als normalen Navigationslink.
+
+items:
+  - label: "Dein Coach"
+    url: "/#coach"
+    style: "link"
+  - label: "Blog"
+    url: "/blog/"
+    style: "link"
+  - label: "Rechner"
+    url: "/tools/"
+    style: "link"
+  - label: "Coaching-Pläne"
+    url: "/#pricing"
+    style: "link"
+  - label: "Kontakt"
+    url: "/#contact"
+    style: "button"

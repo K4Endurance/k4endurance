@@ -6,7 +6,7 @@ layout: null
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>K4Endurance – Trail & Ultrarunning Coaching</title>
+  <title>K4 Endurance – Trail & Ultrarunning Coaching</title>
   <meta name="description" content="{{ site.description }}" />
 
   <!-- Bulma -->
@@ -48,7 +48,7 @@ layout: null
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item title is-4 mb-0" href="#">
-          K4Endurance
+          K4<span class="has-text-accent">.</span>Endurance
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
           <span aria-hidden="true"></span>
@@ -58,14 +58,15 @@ layout: null
       </div>
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item" href="#coach">Dein Coach</a>
-          <a class="navbar-item" href="#highlights">Highlights</a>
-          <a class="navbar-item" href="#tutorials">Plattform</a>
-          <a class="navbar-item" href="#pricing">Coaching-Pläne</a>
-          <a class="navbar-item" href="{{ site.baseurl }}/blog/">Blog</a>
-          <div class="navbar-item">
-            <a href="#contact" class="button is-accent is-rounded">Kontakt</a>
-          </div>
+          {% for item in site.data.navbar.items %}
+            {% if item.style == "button" %}
+            <div class="navbar-item">
+              <a href="{{ item.url }}" class="button is-accent is-rounded">{{ item.label }}</a>
+            </div>
+            {% else %}
+            <a class="navbar-item" href="{{ item.url }}">{{ item.label }}</a>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -308,7 +309,7 @@ layout: null
       <div class="columns is-vcentered">
         <div class="column">
           <p class="title is-5 has-text-white mb-0">
-            K4Endurance
+            K4<span class="has-text-accent">.</span>Endurance
           </p>
         </div>
         <div class="column has-text-centered">
