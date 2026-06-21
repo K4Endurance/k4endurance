@@ -9,10 +9,6 @@ hero:
 offer:
   kicker: Unsere Plattform
   title: Was K4Endurance bietet
-  items: Personalisierte, dynamische Trainingspläne für dein Trail- oder
-    Ultra-Ziel,Smarte Workouts, die deine verfügbare Trainingszeit optimal
-    nutzen,Tutorials zu Verletzungsprävention, Kraft- und
-    Rumpfstabilität,Trail-running-spezifische Beratung und Clinics.
 coach:
   kicker: Dein Coach
   name: Karsten
@@ -23,33 +19,28 @@ coach:
   bio_paragraph2: Nach unzähligen Trainingskilometern und eigenen Fehlern habe ich
     K4 Endurance gegründet, um dich genau diese Fehler zu ersparen — und dich
     fit, gesund und glücklich an deine Startlinie zu bringen.
-  tags: Trail Running,Ultramarathon,Bergläufe,Regeneration,Ernährungsstrategie.
 highlights:
   kicker: Highlights
   title: Meilensteine
-  items: "[object Object],[object Object],[object Object]"
+  items:
+    - title: Transgrancanaria
+      category: "2025"
+      description: Versagt
 tutorials:
   kicker: Wissen
   title: Tutorials auf Top-Niveau
   intro: Zugang zu Tutorials aus mehreren Bereichen, speziell für Trail- und
     Ultrarunning entwickelt.
-  items: "[object Object],[object Object],[object Object],[object Object],[object
-    Object],[object Object]"
 pricing:
   kicker: Coaching-Pläne
   title: Für jeden Trail- und Ultraläufer
   basic:
     name: Basic
     price: XX
-    items: Personalisierte Trainingspläne,Anpassungen in Echtzeit auf Basis deines
-      Feedbacks,Tutorials zu Verletzungsprävention & Kraft,Dein evidenzbasierter
-      Trainingsansatz erklärt.
   premium:
     name: Premium
     badge: Limitiertes Angebot
     price: YY
-    items: Alles aus Basic,Echtzeit-Anpassung auf Basis genauer Datenanalyse,Volle
-      Tutorial- & Clinic-Bibliothek,Direkter 1:1-Austausch mit deinem Coach
 contact:
   kicker: Kontakt
   title: Lass uns reden.
