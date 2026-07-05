@@ -7,12 +7,15 @@ content:
     label: "Blog-Artikel"
     type: collection
     path: '_posts'
-    filename: '{year}-{month}-{day}-{fields.title}.md'
+    filename: '{year}-{month}-{day}-{fields.slug}.md'
     view:
       fields: [title, date, category]
     fields:
       - { name: date, label: "Datum", type: date }
       - { name: title, label: "Titel", type: string }
+      - name: slug
+        label: "URL-Kürzel (ohne Leerzeichen, z.B. mein-erster-post)"
+        type: string
       - name: category
         label: "Kategorie"
         type: select
