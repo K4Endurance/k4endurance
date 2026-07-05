@@ -1,4 +1,5 @@
 ---
+layout: post
 date: 2026-06-21
 title: PlyoRechner
 slug: plyometrics-rechner
