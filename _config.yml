@@ -16,6 +16,7 @@ plugins:
 permalink: /blog/:year/:month/:day/:title/
 paginate: 6
 paginate_path: "/blog/page:num/"
+future: true
 
 defaults:
   - scope:
