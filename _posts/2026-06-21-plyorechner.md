@@ -6,7 +6,7 @@ category: Training
 author: Karsten
 excerpt: Plyorechner
 ---
-**# Der Plymetrics Rechner**
+# **Der Plymetrics Rechner**
 
 {% include plyorechner.html %}
 
