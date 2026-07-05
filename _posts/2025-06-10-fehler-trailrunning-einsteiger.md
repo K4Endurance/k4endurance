@@ -1,6 +1,7 @@
 ---
 date: 2025-06-10
 title: 5 Fehler, die jeder Trailläufer am Anfang macht
+slug: 5-fehler
 category: Training
 author: Karsten
 image: /assets/images/blog/post-1-cover.jpg
