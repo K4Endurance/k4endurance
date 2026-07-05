@@ -1,12 +1,13 @@
 ---
 date: 2026-06-21
 title: PlyoRechner
+slug: plyometrics-rechner
 category: Training
 author: Karsten
 excerpt: Plyorechner
 ---
 **# Der Plymetrics Rechner**
 
-{% include plyo-rechner.html %}
+{% include plyorechner.html %}
 
 nach Bearsley 2017
