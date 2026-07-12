@@ -1,12 +1,12 @@
 ---
 layout: default
-lang: de
+lang: en
 page_id: home
-permalink: /
+permalink: /en/
 meta_title: "K4 Endurance – Trail & Ultrarunning Coaching"
-meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Endurance."
+meta_description: "Individual trail and ultrarunning coaching with K4 Endurance."
 ---
-{% assign d = site.data.home_de %}
+{% assign d = site.data.home_en %}
 
 <!-- ── Hero ── -->
 <section class="hero is-light is-fullheight-with-navbar">
@@ -22,8 +22,8 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
           </h1>
           <p class="subtitle is-5 mb-6">{{ d.hero.subtitle }}</p>
           <div class="buttons">
-            <a href="#contact" class="button is-accent is-medium is-rounded">Erstgespräch buchen</a>
-            <a href="#pricing" class="button is-medium is-rounded">Coaching-Pläne ansehen</a>
+            <a href="#contact" class="button is-accent is-medium is-rounded">Book a free call</a>
+            <a href="#pricing" class="button is-medium is-rounded">View coaching plans</a>
           </div>
         </div>
         <div class="column is-4 is-offset-1 is-hidden-mobile">
@@ -42,25 +42,25 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
     <div class="columns is-mobile has-text-centered">
       <div class="column">
         <p class="title is-2 has-text-white mb-1">120+</p>
-        <p class="heading has-text-white">Athleten betreut</p>
+        <p class="heading has-text-white">Athletes coached</p>
       </div>
       <div class="column">
-        <p class="title is-2 has-text-white mb-1">8 J.</p>
-        <p class="heading has-text-white">Erfahrung</p>
+        <p class="title is-2 has-text-white mb-1">8 Y.</p>
+        <p class="heading has-text-white">Experience</p>
       </div>
       <div class="column">
         <p class="title is-2 has-text-white mb-1">40+</p>
-        <p class="heading has-text-white">Rennen begleitet</p>
+        <p class="heading has-text-white">Races supported</p>
       </div>
       <div class="column">
         <p class="title is-2 has-text-white mb-1">100%</p>
-        <p class="heading has-text-white">Individuell</p>
+        <p class="heading has-text-white">Individual</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── Was wir bieten ── -->
+<!-- ── What we offer ── -->
 <section class="section has-background-light">
   <div class="container">
     <div class="columns is-vcentered">
@@ -70,18 +70,14 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
       </div>
       <div class="column is-6 is-offset-1">
         <div class="content is-medium">
-          <ul>
-            {% for item in d.offer.items %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
+          <ul>{% for item in d.offer.items %}<li>{{ item }}</li>{% endfor %}</ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Dein Coach ── -->
+<!-- ── Your Coach ── -->
 <section id="coach" class="section">
   <div class="container">
     <div class="columns is-vcentered">
@@ -92,15 +88,13 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
       </div>
       <div class="column is-7 is-offset-1">
         <p class="tag is-danger is-light mb-4">{{ d.coach.kicker }}</p>
-        <h2 class="title is-1 mb-5">Ich bin<br />{{ d.coach.name }}.</h2>
+        <h2 class="title is-1 mb-5">I am<br />{{ d.coach.name }}.</h2>
         <div class="content is-medium">
           <p>{{ d.coach.bio_paragraph1 }}</p>
           <p>{{ d.coach.bio_paragraph2 }}</p>
         </div>
         <div class="tags mt-5">
-          {% for tag in d.coach.tags %}
-          <span class="tag is-medium is-light">{{ tag }}</span>
-          {% endfor %}
+          {% for tag in d.coach.tags %}<span class="tag is-medium is-light">{{ tag }}</span>{% endfor %}
         </div>
       </div>
     </div>
@@ -154,7 +148,7 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
   </div>
 </section>
 
-<!-- ── Coaching-Pläne ── -->
+<!-- ── Coaching Plans ── -->
 <section id="pricing" class="section has-background-light">
   <div class="container">
     <p class="tag is-danger is-light mb-4">{{ d.pricing.kicker }}</p>
@@ -165,12 +159,12 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
           <p class="title is-4 mb-1">{{ d.pricing.basic.name }}</p>
           <p class="mb-4">
             <span class="title is-1">{{ d.pricing.basic.price }} €</span>
-            <span class="has-text-grey"> / Monat</span>
+            <span class="has-text-grey"> / month</span>
           </p>
           <div class="content">
             <ul>{% for item in d.pricing.basic.items %}<li>{{ item }}</li>{% endfor %}</ul>
           </div>
-          <a href="#contact" class="button is-fullwidth is-rounded">Jetzt anfragen</a>
+          <a href="#contact" class="button is-fullwidth is-rounded">Get in touch</a>
         </div>
       </div>
       <div class="column is-6 is-offset-1">
@@ -179,19 +173,19 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
           <p class="title is-4 has-text-white mb-1">{{ d.pricing.premium.name }}</p>
           <p class="mb-4">
             <span class="title is-1 has-text-white">{{ d.pricing.premium.price }} €</span>
-            <span class="has-text-white"> / Monat</span>
+            <span class="has-text-white"> / month</span>
           </p>
           <div class="content has-text-white">
             <ul>{% for item in d.pricing.premium.items %}<li>{{ item }}</li>{% endfor %}</ul>
           </div>
-          <a href="#contact" class="button is-white is-fullwidth is-rounded"><strong>Jetzt anfragen</strong></a>
+          <a href="#contact" class="button is-white is-fullwidth is-rounded"><strong>Get in touch</strong></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Kontakt ── -->
+<!-- ── Contact ── -->
 <section id="contact" class="section">
   <div class="container">
     <div class="columns">
@@ -210,22 +204,22 @@ meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Enduran
         <form action="https://formspree.io/f/DEINE_ID" method="POST">
           <div class="field">
             <label class="label" for="f-name">Name</label>
-            <div class="control"><input class="input is-medium" type="text" id="f-name" name="name" placeholder="Max Mustermann" /></div>
+            <div class="control"><input class="input is-medium" type="text" id="f-name" name="name" placeholder="Jane Smith" /></div>
           </div>
           <div class="field">
-            <label class="label" for="f-email">E-Mail</label>
-            <div class="control"><input class="input is-medium" type="email" id="f-email" name="email" placeholder="max@beispiel.de" /></div>
+            <label class="label" for="f-email">Email</label>
+            <div class="control"><input class="input is-medium" type="email" id="f-email" name="email" placeholder="jane@example.com" /></div>
           </div>
           <div class="field">
-            <label class="label" for="f-goal">Dein Ziel</label>
-            <div class="control"><input class="input is-medium" type="text" id="f-goal" name="goal" placeholder="z.B. mein erster 100-Meilen-Trail" /></div>
+            <label class="label" for="f-goal">Your goal</label>
+            <div class="control"><input class="input is-medium" type="text" id="f-goal" name="goal" placeholder="e.g. my first 100-mile trail" /></div>
           </div>
           <div class="field">
-            <label class="label" for="f-message">Nachricht</label>
-            <div class="control"><textarea class="textarea is-medium" id="f-message" name="message" rows="4" placeholder="Erzähl mir mehr über dich …"></textarea></div>
+            <label class="label" for="f-message">Message</label>
+            <div class="control"><textarea class="textarea is-medium" id="f-message" name="message" rows="4" placeholder="Tell me more about yourself …"></textarea></div>
           </div>
           <div class="field mt-5">
-            <div class="control"><button class="button is-accent is-medium is-rounded" type="submit">Nachricht senden</button></div>
+            <div class="control"><button class="button is-accent is-medium is-rounded" type="submit">Send message</button></div>
           </div>
         </form>
       </div>

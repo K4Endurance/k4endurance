@@ -9,13 +9,19 @@ content:
     path: '_posts'
     filename: '{year}-{month}-{day}-{fields.slug}.md'
     view:
-      fields: [title, date, category]
+      fields: [title, date, lang, category]
     fields:
       - { name: date, label: "Datum", type: date }
       - { name: title, label: "Titel", type: string }
-      - name: slug
-        label: "URL-Kürzel (ohne Leerzeichen, z.B. mein-erster-post)"
-        type: string
+      - { name: slug, label: "URL-Kürzel (ohne Leerzeichen, z.B. mein-erster-post)", type: string }
+      - { name: page_id, label: "Page ID (gleich für DE+EN Versionen)", type: string }
+      - name: lang
+        label: "Sprache"
+        type: select
+        options:
+          values:
+            - { value: "de", label: "Deutsch" }
+            - { value: "en", label: "English" }
       - name: category
         label: "Kategorie"
         type: select
@@ -26,10 +32,10 @@ content:
       - { name: excerpt, label: "Kurzbeschreibung (für Übersicht)", type: text }
       - { name: body, label: "Artikeltext", type: rich-text }
 
-  - name: navbar
-    label: "Navigation"
+  - name: navbar_de
+    label: "Navigation (DE)"
     type: file
-    path: _data/navbar.yml
+    path: _data/navbar_de.yml
     fields:
       - name: items
         label: "Navbar-Elemente"
@@ -39,19 +45,41 @@ content:
             summary: "{label}"
         fields:
           - { name: label, label: "Beschriftung", type: string }
-          - { name: url, label: "Link (z.B. /blog/ oder /#contact)", type: string }
+          - { name: url, label: "Link", type: string }
           - name: style
             label: "Darstellung"
             type: select
             options:
               values:
                 - { value: "link", label: "Normaler Link" }
-                - { value: "button", label: "Hervorgehobener Button" }
+                - { value: "button", label: "Button" }
 
-  - name: rechner
-    label: "Rechner"
+  - name: navbar_en
+    label: "Navigation (EN)"
     type: file
-    path: _data/rechner.yml
+    path: _data/navbar_en.yml
+    fields:
+      - name: items
+        label: "Navbar-Elemente"
+        type: object
+        list:
+          collapsible:
+            summary: "{label}"
+        fields:
+          - { name: label, label: "Label", type: string }
+          - { name: url, label: "Link", type: string }
+          - name: style
+            label: "Style"
+            type: select
+            options:
+              values:
+                - { value: "link", label: "Link" }
+                - { value: "button", label: "Button" }
+
+  - name: rechner_de
+    label: "Rechner (DE)"
+    type: file
+    path: _data/rechner_de.yml
     fields:
       - name: intro
         label: "Einleitung"
@@ -67,43 +95,60 @@ content:
           collapsible:
             summary: "{title}"
         fields:
-          - { name: title, label: "Name des Rechners", type: string }
+          - { name: title, label: "Name", type: string }
           - { name: description, label: "Beschreibung", type: text }
-          - { name: url, label: "Link (z.B. /tools/mein-rechner/)", type: string }
-          - { name: icon, label: "Emoji-Icon", type: string }
+          - { name: url, label: "Link", type: string }
+          - { name: icon, label: "Emoji", type: string }
           - name: status
             label: "Status"
             type: select
             options:
               values: ["live", "bald verfügbar"]
 
-  - name: home
-    label: "Startseite"
+  - name: rechner_en
+    label: "Rechner (EN)"
     type: file
-    path: _data/home.yml
+    path: _data/rechner_en.yml
     fields:
-      - name: hero
-        label: "Hero-Bereich"
+      - name: intro
+        label: "Intro"
         type: object
         fields:
-          - { name: kicker, label: "Vorzeile (z.B. K4 Endurance)", type: string }
+          - { name: kicker, label: "Kicker", type: string }
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Text", type: text }
+      - name: items
+        label: "Calculator List"
+        type: object
+        list:
+          collapsible:
+            summary: "{title}"
+        fields:
+          - { name: title, label: "Name", type: string }
+          - { name: description, label: "Description", type: text }
+          - { name: url, label: "Link", type: string }
+          - { name: icon, label: "Emoji", type: string }
+          - name: status
+            label: "Status"
+            type: select
+            options:
+              values: ["live", "coming soon"]
+
+  - name: home_de
+    label: "Startseite (DE)"
+    type: file
+    path: _data/home_de.yml
+    fields:
+      - name: hero
+        label: "Hero"
+        type: object
+        fields:
+          - { name: kicker, label: "Vorzeile", type: string }
           - { name: title_line1, label: "Titelzeile 1", type: string }
           - { name: title_line2, label: "Titelzeile 2 (orange)", type: string }
           - { name: title_line3, label: "Titelzeile 3", type: string }
           - { name: subtitle, label: "Untertitel", type: text }
           - { name: photo, label: "Hero-Foto", type: image }
-
-      - name: offer
-        label: "Was wir bieten"
-        type: object
-        fields:
-          - { name: kicker, label: "Vorzeile", type: string }
-          - { name: title, label: "Titel", type: string }
-          - name: items
-            label: "Stichpunkte"
-            type: string
-            list: true
-
       - name: coach
         label: "Dein Coach"
         type: object
@@ -117,9 +162,8 @@ content:
             label: "Schlagworte"
             type: string
             list: true
-
       - name: highlights
-        label: "Highlights / Meilensteine"
+        label: "Highlights"
         type: object
         fields:
           - { name: kicker, label: "Vorzeile", type: string }
@@ -135,24 +179,6 @@ content:
               - { name: category, label: "Kategorie / Jahr", type: string }
               - { name: description, label: "Beschreibung", type: text }
               - { name: photo, label: "Foto", type: image }
-
-      - name: tutorials
-        label: "Tutorials / Plattform"
-        type: object
-        fields:
-          - { name: kicker, label: "Vorzeile", type: string }
-          - { name: title, label: "Titel", type: string }
-          - { name: intro, label: "Einleitungstext", type: text }
-          - name: items
-            label: "Tutorial-Themen"
-            type: object
-            list:
-              collapsible:
-                summary: "{title}"
-            fields:
-              - { name: title, label: "Titel", type: string }
-              - { name: description, label: "Beschreibung", type: text }
-
       - name: pricing
         label: "Coaching-Pläne"
         type: object
@@ -164,7 +190,7 @@ content:
             type: object
             fields:
               - { name: name, label: "Name", type: string }
-              - { name: price, label: "Preis (Zahl, ohne €)", type: string }
+              - { name: price, label: "Preis", type: string }
               - name: items
                 label: "Leistungen"
                 type: string
@@ -174,26 +200,112 @@ content:
             type: object
             fields:
               - { name: name, label: "Name", type: string }
-              - { name: badge, label: "Badge-Text", type: string }
-              - { name: price, label: "Preis (Zahl, ohne €)", type: string }
+              - { name: badge, label: "Badge", type: string }
+              - { name: price, label: "Preis", type: string }
               - name: items
                 label: "Leistungen"
                 type: string
                 list: true
-
       - name: contact
         label: "Kontakt"
         type: object
         fields:
           - { name: kicker, label: "Vorzeile", type: string }
           - { name: title, label: "Titel", type: string }
-          - { name: text, label: "Beschreibungstext", type: text }
-          - { name: email, label: "E-Mail-Adresse", type: string }
+          - { name: text, label: "Text", type: text }
+          - { name: email, label: "E-Mail", type: string }
           - { name: location, label: "Standort", type: string }
-
       - name: footer
         label: "Footer"
         type: object
         fields:
-          - { name: copyright, label: "Copyright-Zeile", type: string }
-          - { name: privacy_url, label: "Link zur Datenschutzseite", type: string }
+          - { name: copyright, label: "Copyright", type: string }
+          - { name: privacy_url, label: "Datenschutz-Link", type: string }
+
+  - name: home_en
+    label: "Startseite (EN)"
+    type: file
+    path: _data/home_en.yml
+    fields:
+      - name: hero
+        label: "Hero"
+        type: object
+        fields:
+          - { name: kicker, label: "Kicker", type: string }
+          - { name: title_line1, label: "Title line 1", type: string }
+          - { name: title_line2, label: "Title line 2 (orange)", type: string }
+          - { name: title_line3, label: "Title line 3", type: string }
+          - { name: subtitle, label: "Subtitle", type: text }
+          - { name: photo, label: "Hero photo", type: image }
+      - name: coach
+        label: "Your Coach"
+        type: object
+        fields:
+          - { name: kicker, label: "Kicker", type: string }
+          - { name: name, label: "Name", type: string }
+          - { name: photo, label: "Photo", type: image }
+          - { name: bio_paragraph1, label: "Bio – paragraph 1", type: text }
+          - { name: bio_paragraph2, label: "Bio – paragraph 2", type: text }
+          - name: tags
+            label: "Tags"
+            type: string
+            list: true
+      - name: highlights
+        label: "Highlights"
+        type: object
+        fields:
+          - { name: kicker, label: "Kicker", type: string }
+          - { name: title, label: "Title", type: string }
+          - name: items
+            label: "Milestones"
+            type: object
+            list:
+              collapsible:
+                summary: "{title}"
+            fields:
+              - { name: title, label: "Title", type: string }
+              - { name: category, label: "Category / Year", type: string }
+              - { name: description, label: "Description", type: text }
+              - { name: photo, label: "Photo", type: image }
+      - name: pricing
+        label: "Coaching Plans"
+        type: object
+        fields:
+          - { name: kicker, label: "Kicker", type: string }
+          - { name: title, label: "Title", type: string }
+          - name: basic
+            label: "Plan: Basic"
+            type: object
+            fields:
+              - { name: name, label: "Name", type: string }
+              - { name: price, label: "Price", type: string }
+              - name: items
+                label: "Features"
+                type: string
+                list: true
+          - name: premium
+            label: "Plan: Premium"
+            type: object
+            fields:
+              - { name: name, label: "Name", type: string }
+              - { name: badge, label: "Badge", type: string }
+              - { name: price, label: "Price", type: string }
+              - name: items
+                label: "Features"
+                type: string
+                list: true
+      - name: contact
+        label: "Contact"
+        type: object
+        fields:
+          - { name: kicker, label: "Kicker", type: string }
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Text", type: text }
+          - { name: email, label: "Email", type: string }
+          - { name: location, label: "Location", type: string }
+      - name: footer
+        label: "Footer"
+        type: object
+        fields:
+          - { name: copyright, label: "Copyright", type: string }
+          - { name: privacy_url, label: "Privacy link", type: string }
