@@ -1,0 +1,28 @@
+{% if page.lang == "en" %}
+  {% assign homedata = site.data.home_en %}
+{% else %}
+  {% assign homedata = site.data.home_de %}
+{% endif %}
+
+<footer class="footer has-background-dark">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column">
+        <p class="title is-5 has-text-white mb-0">
+          K4<span class="has-text-accent">.</span>Endurance
+        </p>
+      </div>
+      <div class="column has-text-centered">
+        <p class="has-text-grey-light is-size-7">{{ homedata.footer.copyright }}</p>
+      </div>
+      <div class="column has-text-right">
+        <a href="{{ '/' | relative_url }}" class="has-text-grey-light is-size-7 mr-4">
+          {% if page.lang == "en" %}Home{% else %}Startseite{% endif %}
+        </a>
+        <a href="{{ homedata.footer.privacy_url }}" class="has-text-grey-light is-size-7">
+          {% if page.lang == "en" %}Privacy{% else %}Datenschutz{% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

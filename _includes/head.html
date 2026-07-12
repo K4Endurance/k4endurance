@@ -1,0 +1,28 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} – K4 Endurance{% endif %}</title>
+<meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  body { font-family: 'DM Sans', sans-serif; }
+  h1, h2, h3, h4, h5, h6, .title, .navbar-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+  }
+  .has-text-accent       { color: #e8380d; }
+  .has-background-accent { background-color: #e8380d; }
+  .button.is-accent      { background-color: #e8380d; border-color: transparent; color: #fff; }
+  .button.is-accent:hover { background-color: #c92e09; color: #fff; }
+  .display-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+</style>
