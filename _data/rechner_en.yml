@@ -1,0 +1,17 @@
+intro:
+  kicker: "Calculators"
+  title: "Tools for your training"
+  text: "A growing collection of practical calculators to help you plan your training based on data."
+
+items:
+  - title: "Plyometrics Calculator"
+    description: "Calculates training load and progressive increase for plyometric training based on your current level."
+    url: "/en/tools/plyometrics-calculator/"
+    icon: "🦵"
+    status: "live"
+
+  - title: "Volume Progression Calculator"
+    description: "Plans the gradual increase of your training volume over several weeks to avoid overload."
+    url: "/en/tools/volume-progression-calculator/"
+    icon: "📈"
+    status: "coming soon"

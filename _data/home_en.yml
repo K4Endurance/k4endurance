@@ -1,0 +1,96 @@
+hero:
+  kicker: "K4 Endurance"
+  title_line1: "Fitter."
+  title_line2: "Happier."
+  title_line3: "On the start line."
+  subtitle: "K4 Endurance gets you to the start line of your trail or ultra goal in your fittest, healthiest and happiest shape."
+  photo: "/assets/images/hero-photo.jpg"
+
+offer:
+  kicker: "Our Platform"
+  title: "What K4 Endurance offers"
+  items:
+    - "Personalised, dynamic training plans for your trail or ultra goal"
+    - "Smart workouts that make the most of your available training time"
+    - "Tutorials on injury prevention, strength and core stability"
+    - "Trail-running-specific advice and clinics"
+
+coach:
+  kicker: "Your Coach"
+  name: "[Your Name]"
+  photo: "/assets/images/coach-photo.jpg"
+  bio_paragraph1: "[Placeholder: Short description of your running career and experience.]"
+  bio_paragraph2: "After countless training kilometres and my own mistakes, I founded K4 Endurance to help you avoid exactly those mistakes — and get you fit, healthy and happy to your start line."
+  tags:
+    - "Trail Running"
+    - "Ultramarathon"
+    - "Mountain Running"
+    - "Recovery"
+    - "Nutrition Strategy"
+
+highlights:
+  kicker: "Highlights"
+  title: "Milestones"
+  items:
+    - title: "[Highlight 1]"
+      category: "[Category / Year]"
+      description: "[Placeholder: Description of this milestone — race, record or achievement.]"
+      photo: "/assets/images/highlight-1.jpg"
+    - title: "[Highlight 2]"
+      category: "[Category / Year]"
+      description: "[Placeholder: Description of this milestone.]"
+      photo: "/assets/images/highlight-2.jpg"
+    - title: "[Highlight 3]"
+      category: "[Category / Year]"
+      description: "[Placeholder: Description of this milestone.]"
+      photo: "/assets/images/highlight-3.jpg"
+
+tutorials:
+  kicker: "Knowledge"
+  title: "Top-level Tutorials"
+  intro: "Access to tutorials across multiple areas, developed specifically for trail and ultrarunning."
+  items:
+    - title: "Training Approach"
+      description: "The how and why of your evidence-based training, explained clearly."
+    - title: "Injury Prevention"
+      description: "Exercises for strength, core stability and sustainable resilience."
+    - title: "Running Technique"
+      description: "Trail, ascent, descent — technique for every terrain."
+    - title: "Nutrition & Hydration"
+      description: "Strategies for long efforts and race days."
+    - title: "Mental Strength"
+      description: "Dealing with crises, conditions and race day itself."
+    - title: "Gear & Equipment"
+      description: "What you really need — and what you don't."
+
+pricing:
+  kicker: "Coaching Plans"
+  title: "For every trail and ultra runner"
+  basic:
+    name: "Basic"
+    price: "XX"
+    items:
+      - "Personalised training plans"
+      - "Real-time adjustments based on your feedback"
+      - "Tutorials on injury prevention & strength"
+      - "Your evidence-based training approach explained"
+  premium:
+    name: "Premium"
+    badge: "Limited availability"
+    price: "YY"
+    items:
+      - "Everything in Basic"
+      - "Real-time adjustments based on detailed data analysis"
+      - "Full tutorial & clinic library"
+      - "Direct 1:1 communication with your coach"
+
+contact:
+  kicker: "Contact"
+  title: "Let's talk."
+  text: "The first conversation is free and non-binding. Tell me about your goal — and we'll figure out together how K4 Endurance gets you there."
+  email: "hallo@k4endurance.com"
+  location: "Las Palmas de Gran Canaria, Spain"
+
+footer:
+  copyright: "© 2025 K4 Endurance. All rights reserved."
+  privacy_url: "https://www.k4endurance.com/datenschutz"
