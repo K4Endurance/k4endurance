@@ -1,234 +1,826 @@
 ---
-layout: default
+layout: home
 lang: de
 page_id: home
 permalink: /
 meta_title: "K4 Endurance – Trail & Ultrarunning Coaching"
-meta_description: "Individuelles Trail- und Ultrarunning-Coaching mit K4 Endurance."
+meta_description: "Pragmatic Performance Coaching für Trail- und Ultrarunner."
 ---
-{% assign d = site.data.home_de %}
 
-<!-- ── Hero ── -->
-<section class="hero is-light is-fullheight-with-navbar">
-  <div class="hero-body">
+<header class="site-header">
+
     <div class="container">
-      <div class="columns is-vcentered">
-        <div class="column is-7">
-          <p class="tag is-danger is-light is-medium mb-4">{{ d.hero.kicker }}</p>
-          <h1 class="display-title mb-5">
-            {{ d.hero.title_line1 }}<br />
-            <span class="has-text-accent">{{ d.hero.title_line2 }}</span><br />
-            {{ d.hero.title_line3 }}
-          </h1>
-          <p class="subtitle is-5 mb-6">{{ d.hero.subtitle }}</p>
-          <div class="buttons">
-            <a href="#contact" class="button is-accent is-medium is-rounded">Erstgespräch buchen</a>
-            <a href="#pricing" class="button is-medium is-rounded">Coaching-Pläne ansehen</a>
-          </div>
-        </div>
-        <div class="column is-4 is-offset-1 is-hidden-mobile">
-          <figure class="image is-3by4">
-            <img src="{{ d.hero.photo | relative_url }}" alt="{{ d.coach.name }}" />
-          </figure>
-        </div>
-      </div>
+
+        <nav class="navbar">
+
+            <a class="logo" href="/" aria-label="K4ENDURANCE">
+
+                <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB83V5WeZOBsIWZWt4Z6tUImQV7jZL2WQbsfDwjH_rfrgkms21hHzaxLM1nOLrbOlgFXO7I0Gaq__-QavP1zmyisK05152_FfLfh2uLY-S3ZGYf-MhluhG6Z05ewNDsbpqrkjztoGt8hrUgO4Cyx6nBRTLoJ7rL-scrPj_Umi8zyVlmDSQBVGwn1KUPkb_JApm0a_MpHAMa1Za53EWJkjK4x-ef0W7MGf-YHKsX056kMmvV0MHuwcodu8yaZ-ofyDjA5t5gRvjqat0"
+                    alt="K4ENDURANCE Logo">
+
+            </a>
+
+            <ul class="nav" id="primary-nav">
+
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="#">Coaching</a></li>
+                <li><a href="#">Trainingspläne</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">Über mich</a></li>
+
+            </ul>
+
+            <a class="button button-primary" href="#">
+                Kontakt
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-nav"
+                aria-label="Navigation öffnen">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
     </div>
-  </div>
+
+</header>
+
+<main>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="stack reveal">
+
+            <span class="eyebrow">
+
+                Evidence-Based Performance
+
+            </span>
+
+            <h1>
+
+                Ich mache dich zu einem besseren* Trailrunner.
+
+            </h1>
+
+            <p>
+
+                *Aber du entscheidest, was das bedeutet.
+
+            </p>
+
+            <div class="cluster">
+
+                <a href="#" class="button button-primary">
+
+                    Discovery Call buchen
+
+                    <span class="material-symbols-outlined">
+
+                        arrow_forward
+
+                    </span>
+
+                </a>
+
+                <a href="#" class="button button-secondary">
+
+                    Philosophie entdecken
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- ── Stats ── -->
-<div class="has-background-accent py-5">
-  <div class="container">
-    <div class="columns is-mobile has-text-centered">
-      <div class="column">
-        <p class="title is-2 has-text-white mb-1">20+</p>
-        <p class="heading has-text-white">Athleten betreut</p>
-      </div>
-      <div class="column">
-        <p class="title is-2 has-text-white mb-1">8 J.</p>
-        <p class="heading has-text-white">Erfahrung</p>
-      </div>
-      <div class="column">
-        <p class="title is-2 has-text-white mb-1">40+</p>
-        <p class="heading has-text-white">Rennen begleitet</p>
-      </div>
-      <div class="column">
-        <p class="title is-2 has-text-white mb-1">100%</p>
-        <p class="heading has-text-white">Individuell</p>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="section surface">
 
-<!-- ── Was wir bieten ── -->
-<section class="section has-background-light">
-  <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-5">
-        <p class="tag is-danger is-light mb-4">{{ d.offer.kicker }}</p>
-        <h2 class="title is-1 mb-5">{{ d.offer.title }}</h2>
-      </div>
-      <div class="column is-6 is-offset-1">
-        <div class="content is-medium">
-          <ul>
-            {% for item in d.offer.items %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
+    <div class="container">
+
+        <div class="grid grid-2">
+
+            <div class="stack reveal">
+
+                <h2>
+
+                    Für alle, die mehr wollen als mehr Kilometer.
+
+                </h2>
+
+                <p>
+
+                    Viel hilft viel? Im Trailrunning ist das oft der direkte Weg in die Überlastung. Wer intelligent trainiert, braucht kein 100-Meilen-Volumen, um seine Ziele zu erreichen. Es geht um die Qualität der Reize, nicht um die Summe der Schritte.
+
+                </p>
+
+                <ul class="list list-check">
+
+                    <li>
+                        Wissenschaftliche Trainingssteuerung statt Intuition
+                    </li>
+
+                    <li>
+                        Fokus auf Verletzungsprävention und Langlebigkeit
+                    </li>
+
+                    <li>
+                        Individuelle Anpassung an den Lebensalltag
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <figure class="media reveal">
+
+                <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyCd85cWMSnNqFzNr24fH5N3M3X8LXU6P7p-eidEOrEDSC6Rare_3AMiCS_oPlGO-Qb3_vPNqV5N4zJtkq20l9_3tbGKij-Hi9gVXcvLAhmgC9t_M1JBZQlRz_pSoZZS_rUOCahdn2EfcZlp1acQWed-1pSLBNpliUqTLo-6f9MUEtbsuGqPOYuJa2DOAXWbalTg8MZ0HP3FeoAQLau4QYfqRIVTC-2m69shFFRG38Docjl5FectlffSaiKGMMNIV_SdPYqudhW14"
+                    alt="Trailrunner auf einem alpinen Grat">
+
+            </figure>
+
         </div>
-      </div>
+
     </div>
-  </div>
+
 </section>
 
-<!-- ── Dein Coach ── -->
-<section id="coach" class="section">
-  <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-4">
-        <figure class="image is-3by4">
-          <img src="{{ d.coach.photo | relative_url }}" alt="{{ d.coach.name }}" />
-        </figure>
-      </div>
-      <div class="column is-7 is-offset-1">
-        <p class="tag is-danger is-light mb-4">{{ d.coach.kicker }}</p>
-        <h2 class="title is-1 mb-5">Ich bin<br />{{ d.coach.name }}.</h2>
-        <div class="content is-medium">
-          <p>{{ d.coach.bio_paragraph1 }}</p>
-          <p>{{ d.coach.bio_paragraph2 }}</p>
+<section class="section">
+
+    <div class="container">
+
+        <div class="stack reveal">
+
+            <h2>
+
+                Was "besser" wirklich bedeutet.
+
+            </h2>
+
+            <div class="grid grid-3">
+
+                <article class="card">
+
+                    <span class="icon">
+
+                        <span class="material-symbols-outlined icon-lg">
+
+                            monitoring
+
+                        </span>
+
+                    </span>
+
+                    <h3>
+
+                        Metrische Präzision
+
+                    </h3>
+
+                    <p>
+
+                        Wir schauen auf VO2max, Laktat-Schwellen und RE (Running Economy). Dein Erfolg wird messbar, nicht nur fühlbar.
+
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <span class="icon">
+
+                        <span class="material-symbols-outlined icon-lg">
+
+                            psychology
+
+                        </span>
+
+                    </span>
+
+                    <h3>
+
+                        Mentale Robustheit
+
+                    </h3>
+
+                    <p>
+
+                        Trailrunning ist 70% Kopf. Wir entwickeln Strategien für Tiefphasen bei Ultras und technischem Gelände.
+
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <span class="icon">
+
+                        <span class="material-symbols-outlined icon-lg">
+
+                            mountain_flag
+
+                        </span>
+
+                    </span>
+
+                    <h3>
+
+                        Gipfel-Definition
+
+                    </h3>
+
+                    <p>
+
+                        Für den einen ist es die erste Zielankunft, für den anderen ein FKT oder das Podium. Wir definieren DEIN Besser.
+
+                    </p>
+
+                </article>
+
+            </div>
+
         </div>
-        <div class="tags mt-5">
-          {% for tag in d.coach.tags %}
-          <span class="tag is-medium is-light">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      </div>
+
     </div>
-  </div>
+
 </section>
 
-<!-- ── Highlights ── -->
-<section id="highlights" class="section has-background-light">
-  <div class="container">
-    <p class="tag is-danger is-light mb-4">{{ d.highlights.kicker }}</p>
-    <h2 class="title is-1 mb-6">{{ d.highlights.title }}</h2>
-    <div class="columns">
-      {% for h in d.highlights.items %}
-      <div class="column">
-        <div class="box">
-          <figure class="image is-16by9 mb-4">
-            <img src="{{ h.photo | relative_url }}" alt="{{ h.title }}" />
-          </figure>
-          <p class="title is-5 mb-1">{{ h.title }}</p>
-          <p class="subtitle is-6 has-text-accent">{{ h.category }}</p>
-          <p class="content">{{ h.description }}</p>
+<section class="section section-dark">
+
+    <div class="container">
+
+        <div class="stack reveal">
+
+            <header class="stack">
+
+                <h2>
+
+                    Warum dieser Ansatz funktioniert.
+
+                </h2>
+
+                <p>
+
+                    Pragmatismus schlägt Dogmatismus. Meine Methoden basieren auf aktuellen sportwissenschaftlichen Erkenntnissen, angewandt auf die unvorhersehbare Realität der Berge.
+
+                </p>
+
+            </header>
+
+            <div class="steps bp-sm" style="--cols-sm:2">
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        01
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Evidence-Based
+
+                        </h3>
+
+                        <p>
+
+                            Jedes Training hat einen Zweck. Wir nutzen wissenschaftliche Modelle zur Intensitätsverteilung (Polarized/Pyramidal), um das Maximum aus deiner Zeit herauszuholen.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        02
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Health First
+
+                        </h3>
+
+                        <p>
+
+                            Ein verletzter Läufer wird nicht besser. Wir priorisieren Sehnen- und Gelenkgesundheit durch spezifisches Krafttraining und intelligentes Tapering.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        03
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Practical Utility
+
+                        </h3>
+
+                        <p>
+
+                            Die Berge verzeihen keine Theorie-Fehler. Unser Training ist praxisnah – von technischem Downhill-Skills bis zum Verpflegungsmanagement unter Belastung.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        04
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Closed Loop
+
+                        </h3>
+
+                        <p>
+
+                            Feedback ist keine Einbahnstraße. Durch ständigen Datenabgleich und subjektives Empfinden optimieren wir deinen Plan wöchentlich.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
         </div>
-      </div>
-      {% endfor %}
+
     </div>
-  </div>
+
 </section>
 
-<!-- ── Tutorials ── -->
-<section id="tutorials" class="section">
-  <div class="container">
-    <div class="columns is-vcentered mb-6">
-      <div class="column">
-        <p class="tag is-danger is-light mb-4">{{ d.tutorials.kicker }}</p>
-        <h2 class="title is-1">{{ d.tutorials.title }}</h2>
-      </div>
-      <div class="column is-narrow">
-        <p class="subtitle is-6" style="max-width:320px;">{{ d.tutorials.intro }}</p>
-      </div>
-    </div>
-    <div class="columns is-multiline">
-      {% for t in d.tutorials.items %}
-      <div class="column is-4">
-        <div class="box">
-          <p class="title is-5">{{ t.title }}</p>
-          <p class="content">{{ t.description }}</p>
+<section class="section section-alt">
+
+    <div class="container">
+
+        <div class="stack reveal">
+
+            <div class="cluster">
+
+                <h2>
+
+                    Ist das Coaching das Richtige für dich?
+
+                </h2>
+
+                <span class="eyebrow">
+
+                    Qualitäts-Check
+
+                </span>
+
+            </div>
+
+            <div class="grid grid-2">
+
+                <article class="card">
+
+                    <div class="cluster">
+
+                        <span class="material-symbols-outlined icon-positive">
+
+                            check_circle
+
+                        </span>
+
+                        <h3>
+
+                            Du bist hier richtig, wenn...
+
+                        </h3>
+
+                    </div>
+
+                    <ul class="list">
+
+                        <li>...du ein klares Ziel (Wettkampf, Projekt) vor Augen hast.</li>
+
+                        <li>...du bereit bist, Daten zu tracken und Feedback zu geben.</li>
+
+                        <li>...du verstehst, dass Fortschritt Disziplin und Geduld erfordert.</li>
+
+                        <li>...du Struktur suchst, um Training und Beruf zu vereinen.</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="card card-muted">
+
+                    <div class="cluster">
+
+                        <span class="material-symbols-outlined icon-negative">
+
+                            cancel
+
+                        </span>
+
+                        <h3>
+
+                            Wir passen nicht zusammen, wenn...
+
+                        </h3>
+
+                    </div>
+
+                    <ul class="list">
+
+                        <li>...du nach "Quick Fixes" oder Abkürzungen suchst.</li>
+
+                        <li>...du Coaching nur als Motivationsspritze konsumierst.</li>
+
+                        <li>...du Wissenschaft als "überflüssig" für die Natur betrachtest.</li>
+
+                        <li>...du keinen Wert auf systematisches Krafttraining legst.</li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
         </div>
-      </div>
-      {% endfor %}
+
     </div>
-  </div>
+
 </section>
 
-<!-- ── Coaching-Pläne ── -->
-<section id="pricing" class="section has-background-light">
-  <div class="container">
-    <p class="tag is-danger is-light mb-4">{{ d.pricing.kicker }}</p>
-    <h2 class="title is-1 mb-6">{{ d.pricing.title }}</h2>
-    <div class="columns is-vcentered">
-      <div class="column is-5">
-        <div class="box">
-          <p class="title is-4 mb-1">{{ d.pricing.basic.name }}</p>
-          <p class="mb-4">
-            <span class="title is-1">{{ d.pricing.basic.price }} €</span>
-            <span class="has-text-grey"> / Monat</span>
-          </p>
-          <div class="content">
-            <ul>{% for item in d.pricing.basic.items %}<li>{{ item }}</li>{% endfor %}</ul>
-          </div>
-          <a href="#contact" class="button is-fullwidth is-rounded">Jetzt anfragen</a>
+<section class="section surface">
+
+    <div class="container">
+
+        <div class="stack reveal">
+
+            <h2>
+
+                So arbeiten wir zusammen.
+
+            </h2>
+
+            <div class="steps bp-sm bp-lg" style="--cols-sm:2; --cols-lg:4">
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        1
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Onboarding
+
+                        </h3>
+
+                        <p>
+
+                            Status-Quo Analyse, Health Screening und Zieldefinition.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        2
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Programming
+
+                        </h3>
+
+                        <p>
+
+                            Erstellung deines dynamischen Trainingsplans in TrainingPeaks.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        3
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Execution
+
+                        </h3>
+
+                        <p>
+
+                            Tägliche Umsetzung mit technischem Support via App.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="step">
+
+                    <span class="step-number">
+
+                        4
+
+                    </span>
+
+                    <div class="stack">
+
+                        <h3>
+
+                            Review
+
+                        </h3>
+
+                        <p>
+
+                            Wöchentliche Calls &amp; Analysen zur Feinjustierung.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
         </div>
-      </div>
-      <div class="column is-6 is-offset-1">
-        <div class="box has-background-accent">
-          <p class="tag is-white is-light mb-3">{{ d.pricing.premium.badge }}</p>
-          <p class="title is-4 has-text-white mb-1">{{ d.pricing.premium.name }}</p>
-          <p class="mb-4">
-            <span class="title is-1 has-text-white">{{ d.pricing.premium.price }} €</span>
-            <span class="has-text-white"> / Monat</span>
-          </p>
-          <div class="content has-text-white">
-            <ul>{% for item in d.pricing.premium.items %}<li>{{ item }}</li>{% endfor %}</ul>
-          </div>
-          <a href="#contact" class="button is-white is-fullwidth is-rounded"><strong>Jetzt anfragen</strong></a>
-        </div>
-      </div>
+
     </div>
-  </div>
+
 </section>
 
-<!-- ── Kontakt ── -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-5">
-        <p class="tag is-danger is-light mb-4">{{ d.contact.kicker }}</p>
-        <h2 class="title is-1 mb-5">{{ d.contact.title }}</h2>
-        <div class="content">
-          <p>{{ d.contact.text }}</p>
-          <p>
-            📧 <a href="mailto:{{ d.contact.email }}" class="has-text-accent">{{ d.contact.email }}</a><br />
-            📍 {{ d.contact.location }}
-          </p>
+<section class="section section-alt">
+
+    <div class="container">
+
+        <div class="grid grid-2">
+
+            <figure class="media media-frame reveal">
+
+                <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB5zfck4bMY2d4EpuiXaC2bYrtBt27loBdXZsqSib68kBZM2UVAQLAjRhLfAGI4G4JxaguDDVEqTEgnYSBDwM0igpelrCJkg0nkSyT2PbtFd0zcJ_aSSzJvg_OMuOBE9pJC9lRWYTbY1ziuosSXjJP8F2ViEUZiFqfLQxv5z5x7y2hWbvmv3PCWQhGonA2T6u7hyYrqGO6xwrwNmZ__rvEXNowcKiBH06ZZDEepHUonE-PwgKs8Bnzml1v4WFQmEWK1ZDC2qlXlrc"
+                    alt="Coach Portrait">
+
+            </figure>
+
+            <div class="stack reveal">
+
+                <h2>
+
+                    Warum du mir vertrauen kannst.
+
+                </h2>
+
+                <p>
+
+                    Ich bin kein Instagram-Coach. Ich bin Sportwissenschaftler und Trailrunner. Mein Ansatz kombiniert jahrelange Erfahrung in alpinen Ultras mit akademischem Fundament.
+
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <strong>15+</strong>
+
+                        <span>Jahre Erfahrung</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <strong>50+</strong>
+
+                        <span>Ultra Finishes</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <strong>M.Sc.</strong>
+
+                        <span>Sportwissenschaft</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <strong>100%</strong>
+
+                        <span>Pragmatismus</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-      <div class="column is-6 is-offset-1">
-        <form action="https://formspree.io/f/DEINE_ID" method="POST">
-          <div class="field">
-            <label class="label" for="f-name">Name</label>
-            <div class="control"><input class="input is-medium" type="text" id="f-name" name="name" placeholder="Max Mustermann" /></div>
-          </div>
-          <div class="field">
-            <label class="label" for="f-email">E-Mail</label>
-            <div class="control"><input class="input is-medium" type="email" id="f-email" name="email" placeholder="max@beispiel.de" /></div>
-          </div>
-          <div class="field">
-            <label class="label" for="f-goal">Dein Ziel</label>
-            <div class="control"><input class="input is-medium" type="text" id="f-goal" name="goal" placeholder="z.B. mein erster 100-Meilen-Trail" /></div>
-          </div>
-          <div class="field">
-            <label class="label" for="f-message">Nachricht</label>
-            <div class="control"><textarea class="textarea is-medium" id="f-message" name="message" rows="4" placeholder="Erzähl mir mehr über dich …"></textarea></div>
-          </div>
-          <div class="field mt-5">
-            <div class="control"><button class="button is-accent is-medium is-rounded" type="submit">Nachricht senden</button></div>
-          </div>
-        </form>
-      </div>
+
     </div>
-  </div>
+
 </section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="card card-center reveal">
+
+            <div class="stack">
+
+                <h2>
+
+                    Bereit, deinen Weg zu gehen?
+
+                </h2>
+
+                <p>
+
+                    Lass uns in einem kostenlosen 15-minütigen Gespräch klären, ob ich dich zu einem besseren Trailrunner machen kann.
+
+                </p>
+
+            </div>
+
+            <a href="#" class="button button-primary button-lg">
+
+                Discovery Call vereinbaren
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+    {% if page.lang == "en" %}
+      {% assign homedata = site.data.home_en %}
+    {% else %}
+      {% assign homedata = site.data.home_de %}
+    {% endif %}
+
+    <div class="container section">
+
+        <div class="footer">
+
+            <div class="grid grid-2">
+
+                <div class="stack">
+
+                    <h3>
+
+                        K4ENDURANCE
+
+                    </h3>
+
+                    <p>
+
+                        Pragmatic Performance Coaching für Trail- und Ultrarunner. Wissenschaftlich fundiert. Pragmatisch umgesetzt.
+
+                    </p>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <div>
+
+                        <h4>
+
+                            Navigation
+
+                        </h4>
+
+                        <a href="#">Coaching</a>
+                        <a href="#">Trainingspläne</a>
+                        <a href="{{ '/blog/' | relative_url }}">Journal</a>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Rechtliches
+
+                        </h4>
+
+                        <a href="{{ homedata.footer.privacy_url }}">Datenschutz</a>
+                        <a href="#">Impressum</a>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Folgen
+
+                        </h4>
+
+                        <a href="#">Instagram</a>
+                        <a href="#">Strava</a>
+                        <a href="#">Kontakt</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>
+
+                    {{ homedata.footer.copyright }}
+
+                </span>
+
+                <span>
+
+                    BUILDING BETTER RUNNERS
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
