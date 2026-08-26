@@ -896,6 +896,24 @@ p{
 
 }
 
+.lang-switch a{
+
+    font-family:var(--font-heading);
+
+    font-weight:var(--fw-semibold);
+
+    color:var(--color-text-light);
+
+    transition:color var(--transition);
+
+}
+
+.lang-switch a:hover{
+
+    color:var(--color-secondary);
+
+}
+
 /*
     Zwei Kopien des Sprachumschalters: eine im mobilen Dropdown (Teil der
     Nav-Liste), eine kompakt neben dem Kontakt-Button auf breiten Screens.
