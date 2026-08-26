@@ -29,7 +29,7 @@ meta_description: "Pragmatic Performance Coaching für Trail- und Ultrarunner."
                 <li><a href="#">Journal</a></li>
                 <li><a href="#">Über mich</a></li>
 
-                <li class="lang-switch">
+                <li class="lang-switch lang-switch--nav">
                     <strong class="lang-current">DE</strong>
                     <span class="lang-sep" aria-hidden="true">|</span>
                     <a href="/en/">EN</a>
@@ -37,9 +37,19 @@ meta_description: "Pragmatic Performance Coaching für Trail- und Ultrarunner."
 
             </ul>
 
-            <a class="button button-primary" href="#">
-                Kontakt
-            </a>
+            <div class="cluster">
+
+                <div class="lang-switch lang-switch--bar">
+                    <strong class="lang-current">DE</strong>
+                    <span class="lang-sep" aria-hidden="true">|</span>
+                    <a href="/en/">EN</a>
+                </div>
+
+                <a class="button button-primary" href="#">
+                    Kontakt
+                </a>
+
+            </div>
 
             <button
                 class="nav-toggle"
@@ -734,12 +744,6 @@ meta_description: "Pragmatic Performance Coaching für Trail- und Ultrarunner."
 
 <footer class="site-footer">
 
-    {% if page.lang == "en" %}
-      {% assign homedata = site.data.home_en %}
-    {% else %}
-      {% assign homedata = site.data.home_de %}
-    {% endif %}
-
     <div class="container section">
 
         <div class="footer">
@@ -786,7 +790,7 @@ meta_description: "Pragmatic Performance Coaching für Trail- und Ultrarunner."
 
                         </h4>
 
-                        <a href="{{ homedata.footer.privacy_url }}">Datenschutz</a>
+                        <a href="https://www.k4endurance.com/datenschutz">Datenschutz</a>
                         <a href="#">Impressum</a>
 
                     </div>
@@ -813,7 +817,7 @@ meta_description: "Pragmatic Performance Coaching für Trail- und Ultrarunner."
 
                 <span>
 
-                    {{ homedata.footer.copyright }}
+                    © 2025 K4 Endurance. Alle Rechte vorbehalten.
 
                 </span>
 

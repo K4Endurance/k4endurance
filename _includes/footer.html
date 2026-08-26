@@ -1,9 +1,3 @@
-{% if page.lang == "en" %}
-  {% assign homedata = site.data.home_en %}
-{% else %}
-  {% assign homedata = site.data.home_de %}
-{% endif %}
-
 <footer class="footer has-background-dark">
   <div class="container">
     <div class="columns is-vcentered">
@@ -13,13 +7,15 @@
         </p>
       </div>
       <div class="column has-text-centered">
-        <p class="has-text-grey-light is-size-7">{{ homedata.footer.copyright }}</p>
+        <p class="has-text-grey-light is-size-7">
+          {% if page.lang == "en" %}© 2025 K4 Endurance. All rights reserved.{% else %}© 2025 K4 Endurance. Alle Rechte vorbehalten.{% endif %}
+        </p>
       </div>
       <div class="column has-text-right">
         <a href="{{ '/' | relative_url }}" class="has-text-grey-light is-size-7 mr-4">
           {% if page.lang == "en" %}Home{% else %}Startseite{% endif %}
         </a>
-        <a href="{{ homedata.footer.privacy_url }}" class="has-text-grey-light is-size-7">
+        <a href="https://www.k4endurance.com/datenschutz" class="has-text-grey-light is-size-7">
           {% if page.lang == "en" %}Privacy{% else %}Datenschutz{% endif %}
         </a>
       </div>

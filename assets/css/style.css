@@ -896,6 +896,32 @@ p{
 
 }
 
+/*
+    Zwei Kopien des Sprachumschalters: eine im mobilen Dropdown (Teil der
+    Nav-Liste), eine kompakt neben dem Kontakt-Button auf breiten Screens.
+    Jeweils nur eine der beiden ist gleichzeitig sichtbar.
+*/
+
+@media (min-width:900px){
+
+    .lang-switch--nav{
+
+        display:none;
+
+    }
+
+}
+
+@media (max-width:899px){
+
+    .lang-switch--bar{
+
+        display:none;
+
+    }
+
+}
+
 .nav-toggle{
 
     display:inline-flex;
