@@ -1153,6 +1153,101 @@ p{
 
 }
 
+/* ==========================================================================
+   JOURNAL
+   ========================================================================== */
+
+.page-hero{
+    padding-block:clamp(7rem,14vw,11rem) var(--section-padding);
+}
+
+.page-hero p{
+    max-width:42rem;
+    font-size:var(--fs-lg);
+}
+
+.blog-grid{
+    display:grid;
+    gap:var(--gap-lg);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));
+}
+
+.blog-card{
+    display:flex;
+    flex-direction:column;
+    gap:var(--gap-md);
+    height:100%;
+    padding:var(--gap-lg);
+    background:var(--color-surface);
+    border:1px solid var(--color-border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-sm);
+}
+
+.blog-card-image{
+    aspect-ratio:16 / 9;
+    overflow:hidden;
+    border-radius:var(--radius-md);
+}
+
+.blog-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.blog-meta{
+    color:var(--color-secondary);
+    font-size:var(--fs-xs);
+    font-weight:var(--fw-bold);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+}
+
+.blog-card .text-link,
+.post-back{
+    color:var(--color-primary);
+    font-weight:var(--fw-bold);
+}
+
+.post-header{
+    max-width:58rem;
+}
+
+.post-header .blog-meta{
+    margin-top:var(--gap-sm);
+}
+
+.post-image{
+    width:min(100% - var(--gap-lg),var(--container));
+    margin:0 auto;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+}
+
+.post-image img{
+    width:100%;
+    max-height:38rem;
+    object-fit:cover;
+}
+
+.post-content{
+    width:min(100%,46rem);
+    margin-inline:auto;
+}
+
+.post-content > * + *{
+    margin-top:var(--gap-md);
+}
+
+.post-content ul,
+.post-content ol{
+    padding-left:1.25rem;
+}
+
+.post-content ul{ list-style:disc; }
+.post-content ol{ list-style:decimal; }
+
 
 /* --------------------------------------------------------------------------
    Scroll Reveal

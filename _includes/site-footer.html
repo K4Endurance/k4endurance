@@ -1,0 +1,15 @@
+{% assign is_en = page.lang == 'en' %}
+<footer class="site-footer">
+  <div class="container section">
+    <div class="footer">
+      <div class="grid grid-2">
+        <div class="stack">
+          <h3>K4ENDURANCE</h3>
+          <p>{% if is_en %}Pragmatic performance coaching for trail and ultrarunners. Evidence-based. Applied practically.{% else %}Pragmatic Performance Coaching für Trail- und Ultrarunner. Wissenschaftlich fundiert. Pragmatisch umgesetzt.{% endif %}</p>
+        </div>
+        <div class="footer-links"><div><h4>{% if is_en %}Explore{% else %}Entdecken{% endif %}</h4><a href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if is_en %}Home{% else %}Startseite{% endif %}</a><a href="{% if is_en %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">Journal</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© {{ site.time | date: '%Y' }} K4 Endurance.</span><span>BUILDING BETTER RUNNERS</span></div>
+    </div>
+  </div>
+</footer>

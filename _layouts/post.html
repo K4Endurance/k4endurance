@@ -1,131 +1,47 @@
+{% assign translations = site.posts | where: "page_id", page.page_id %}
+{% assign other_lang = '' %}
+{% for translation in translations %}
+  {% if translation.lang != page.lang %}{% assign other_lang = translation %}{% endif %}
+{% endfor %}
 <!DOCTYPE html>
-<html lang="de">
+<html lang="{{ page.lang | default: 'de' }}">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} – K4 Endurance Blog</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
-
-  <style>
-    body { font-family: 'DM Sans', sans-serif; }
-    h1, h2, h3, h4, h5, h6, .title, .navbar-item {
-      font-family: 'Barlow Condensed', sans-serif;
-      text-transform: uppercase;
-    }
-    .has-text-accent       { color: #e8380d; }
-    .has-background-accent { background-color: #e8380d; }
-    .button.is-accent      { background-color: #e8380d; border-color: transparent; color: #fff; }
-    .button.is-accent:hover { background-color: #c92e09; color: #fff; }
-    .display-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-    /* Lesbare Fließtextbreite für Blogartikel */
-    .post-content { max-width: 720px; }
-    .post-content img { border-radius: 4px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} – K4 Endurance</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-
-  <!-- ── Navbar ── -->
-  <nav class="navbar is-white is-fixed-top has-shadow" role="navigation" aria-label="Hauptnavigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item title is-4 mb-0" href="/">
-          K4<span class="has-text-accent">.</span>Endurance
-        </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navMenu" class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item" href="/#coach">Dein Coach</a>
-          <a class="navbar-item" href="/blog/">Blog</a>
-          <a class="navbar-item" href="/#pricing">Coaching-Pläne</a>
-          <div class="navbar-item">
-            <a href="/#contact" class="button is-accent is-rounded">Kontakt</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ── Artikel-Header ── -->
-  <section class="hero is-light" style="margin-top: 52px;">
-    <div class="hero-body">
-      <div class="container">
-        <p class="tag is-danger is-light mb-4">
-          {% if page.category %}{{ page.category }}{% else %}Blog{% endif %}
-        </p>
-        <h1 class="display-title mb-4">{{ page.title }}</h1>
-        <p class="subtitle is-6 has-text-grey">
-          {{ page.date | date: "%d. %B %Y" }}
-          {% if page.author %} · {{ page.author }}{% endif %}
-        </p>
-      </div>
-    </div>
-  </section>
-
-  {% if page.image %}
-  <div class="container px-4">
-    <figure class="image is-21by9 mb-6">
-      <img src="{{ page.image }}" alt="{{ page.title }}" />
-    </figure>
-  </div>
+  {% if other_lang %}
+    {% assign page_translation_url = other_lang.url %}
+  {% elsif page.lang == 'en' %}
+    {% assign page_translation_url = '/blog/' %}
+  {% else %}
+    {% assign page_translation_url = '/en/blog/' %}
   {% endif %}
-
-  <!-- ── Artikel-Inhalt ── -->
-  <section class="section">
-    <div class="container">
-      <div class="post-content content is-medium mx-auto">
+  {% include site-nav.html translation_url=page_translation_url %}
+  <main>
+    <section class="page-hero">
+      <div class="container post-header stack reveal">
+        <span class="eyebrow">{{ page.category | default: 'Journal' }}</span>
+        <h1>{{ page.title }}</h1>
+        <p class="blog-meta">{{ page.date | date: "%d.%m.%Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
+      </div>
+    </section>
+    {% if page.image %}<figure class="post-image"><img src="{{ page.image | relative_url }}" alt="{{ page.title }}"></figure>{% endif %}
+    <section class="section surface">
+      <article class="post-content">
         {{ content }}
-      </div>
-
-      <div class="post-content mx-auto mt-6 pt-5" style="border-top: 1px solid #eee;">
-        <a href="/blog/" class="has-text-accent">← Zurück zum Blog</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Footer ── -->
-  <footer class="footer has-background-dark">
-    <div class="container">
-      <div class="columns is-vcentered">
-        <div class="column">
-          <p class="title is-5 has-text-white mb-0">
-            K4<span class="has-text-accent">.</span>Endurance
-          </p>
-        </div>
-        <div class="column has-text-centered">
-          <p class="has-text-grey-light is-size-7">© 2025 K4 Endurance. Alle Rechte vorbehalten.</p>
-        </div>
-        <div class="column has-text-right">
-          <a href="/" class="has-text-grey-light is-size-7 mr-4">Startseite</a>
-          <a href="https://www.k4endurance.com/datenschutz" class="has-text-grey-light is-size-7">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.navbar-burger').forEach(burger => {
-      burger.addEventListener('click', () => {
-        const target = document.getElementById(burger.dataset.target);
-        burger.classList.toggle('is-active');
-        target.classList.toggle('is-active');
-      });
-    });
-  </script>
+        <p><a class="post-back" href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}← Back to the journal{% else %}← Zurück zum Journal{% endif %}</a></p>
+      </article>
+    </section>
+  </main>
+  {% include site-footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
