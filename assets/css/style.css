@@ -70,8 +70,8 @@ ul{
 
     /* Typography */
 
-    --font-heading:"Barlow Condensed",sans-serif;
-    --font-body:"Barlow",sans-serif;
+    --font-heading:"Asap Condensed",sans-serif;
+    --font-body:"Asap",sans-serif;
 
     --fs-xs:.875rem;
     --fs-sm:1rem;
@@ -86,7 +86,8 @@ ul{
     --fw-medium:500; /* reserviert: z.B. Sublabels, sekundäre UI-Texte */
     --fw-semibold:600;
     --fw-bold:700;
-    --fw-black:800;
+    --fw-extrabold:800;
+    --fw-black:900;
 
 
 
@@ -198,7 +199,7 @@ h2{
 
     font-size:var(--fs-h2);
 
-    font-weight:var(--fw-bold);
+    font-weight:var(--fw-extrabold);
 
 }
 
@@ -730,7 +731,7 @@ p{
 
     font-family:var(--font-heading);
 
-    font-weight:var(--fw-bold);
+    font-weight:var(--fw-extrabold);
 
     font-size:2rem;
 
@@ -787,7 +788,7 @@ p{
 
     font-size:1.7rem;
 
-    font-weight:var(--fw-bold);
+    font-weight:var(--fw-extrabold);
 
     box-shadow:var(--shadow-sm);
 
