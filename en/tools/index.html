@@ -1,0 +1,53 @@
+---
+layout: home
+lang: en
+page_id: tools
+permalink: /en/tools/
+meta_title: "Tools & calculators – K4 Endurance"
+meta_description: "Free training calculators and tools for trail and ultrarunners by K4 Endurance."
+translation_url: /tools/
+---
+{% comment %}
+  Übersicht aller Tools. Die einzelnen Tools werden in PagesCMS gepflegt
+  (Collection _tools/en) – hier muss nichts angepasst werden.
+{% endcomment %}
+{% include site-nav.html translation_url=page.translation_url %}
+
+<main>
+  <section class="page-hero">
+    <div class="container stack reveal">
+      <span class="eyebrow">Tools &amp; calculators</span>
+      <h1>Tools for your training.</h1>
+      <p>Practical calculators and tools to help you plan and steer your training.</p>
+    </div>
+  </section>
+
+  <section class="section surface">
+    <div class="container">
+      {% assign tools = site.tools | where: "lang", "en" | sort: "order" %}
+      {% if tools.size > 0 %}
+        <div class="blog-grid tool-grid">
+          {% for tool in tools %}
+            <article class="blog-card tool-card reveal{% if tool.status == 'soon' %} tool-card--soon{% endif %}">
+              <span class="icon"><span class="material-symbols-outlined icon-lg">{{ tool.icon | default: 'calculate' }}</span></span>
+              <div class="stack">
+                {% if tool.status == 'soon' %}
+                  <span class="blog-meta">Coming soon</span>
+                  <h2>{{ tool.title }}</h2>
+                {% else %}
+                  <h2><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h2>
+                {% endif %}
+                {% if tool.description %}<p>{{ tool.description }}</p>{% endif %}
+                {% unless tool.status == 'soon' %}<a class="text-link" href="{{ tool.url | relative_url }}">Open tool <span aria-hidden="true">→</span></a>{% endunless %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>The first tools will appear here soon.</p>
+      {% endif %}
+    </div>
+  </section>
+</main>
+
+{% include site-footer.html %}

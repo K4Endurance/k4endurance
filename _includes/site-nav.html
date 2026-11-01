@@ -1,34 +1,46 @@
+{% comment %}
+  Gemeinsame Navigation für ALLE Seiten (Startseite, Journal, Artikel, Tools).
+  Einbinden:  {% include site-nav.html %}
+  Optional:   translation_url=/en/...   → Ziel des DE|EN-Umschalters
+  Aktiver Menüpunkt wird automatisch erkannt (Startseite, Journal, Tools);
+  bei Bedarf per Front Matter überschreiben: nav_section: home | journal | tools
+{% endcomment %}
+{% assign nav_en = false %}{% if page.lang == 'en' %}{% assign nav_en = true %}{% endif %}
+{% if nav_en %}{% assign nav_home = '/en/' %}{% else %}{% assign nav_home = '/' %}{% endif %}
+{% assign nav_section = page.nav_section %}
+{% unless nav_section %}
+  {% if page.page_id == 'home' %}{% assign nav_section = 'home' %}
+  {% elsif page.collection == 'tools' or page.url contains '/tools/' %}{% assign nav_section = 'tools' %}
+  {% elsif page.collection == 'posts' or page.url contains '/blog/' %}{% assign nav_section = 'journal' %}
+  {% endif %}
+{% endunless %}
+{% if include.translation_url %}{% assign nav_translation = include.translation_url %}{% elsif nav_en %}{% assign nav_translation = '/' %}{% else %}{% assign nav_translation = '/en/' %}{% endif %}
 <header class="site-header">
   <div class="container">
-    <nav class="navbar" aria-label="{% if page.lang == 'en' %}Primary navigation{% else %}Hauptnavigation{% endif %}">
-      <a class="logo" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="K4ENDURANCE">
+    <nav class="navbar" aria-label="{% if nav_en %}Primary navigation{% else %}Hauptnavigation{% endif %}">
+      <a class="logo" href="{{ nav_home | relative_url }}" aria-label="K4ENDURANCE">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB83V5WeZOBsIWZWt4Z6tUImQV7jZL2WQbsfDwjH_rfrgkms21hHzaxLM1nOLrbOlgFXO7I0Gaq__-QavP1zmyisK05152_FfLfh2uLY-S3ZGYf-MhluhG6Z05ewNDsbpqrkjztoGt8hrUgO4Cyx6nBRTLoJ7rL-scrPj_Umi8zyVlmDSQBVGwn1KUPkb_JApm0a_MpHAMa1Za53EWJkjK4x-ef0W7MGf-YHKsX056kMmvV0MHuwcodu8yaZ-ofyDjA5t5gRvjqat0" alt="K4ENDURANCE Logo">
       </a>
       <ul class="nav" id="primary-nav">
-        <li><a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Home{% else %}Startseite{% endif %}</a></li>
-        <li><a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">Journal</a></li>
+        <li><a{% if nav_section == 'home' %} class="active" aria-current="page"{% endif %} href="{{ nav_home | relative_url }}">Home</a></li>
+        <li><a href="#">Coaching</a></li>
+        <li><a href="#">{% if nav_en %}Training plans{% else %}Trainingspläne{% endif %}</a></li>
+        <li><a{% if nav_section == 'journal' %} class="active" aria-current="page"{% endif %} href="{% if nav_en %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">Journal</a></li>
+        <li><a{% if nav_section == 'tools' %} class="active" aria-current="page"{% endif %} href="{% if nav_en %}{{ '/en/tools/' | relative_url }}{% else %}{{ '/tools/' | relative_url }}{% endif %}">Tools</a></li>
+        <li><a href="#">{% if nav_en %}About me{% else %}Über mich{% endif %}</a></li>
         <li class="lang-switch lang-switch--nav">
-          {% if page.lang == 'en' %}
-            {% if include.translation_url %}<a href="{{ include.translation_url | relative_url }}">DE</a>{% else %}<a href="{{ '/' | relative_url }}">DE</a>{% endif %}
-            <span class="lang-sep" aria-hidden="true">|</span><strong class="lang-current">EN</strong>
-          {% else %}
-            <strong class="lang-current">DE</strong><span class="lang-sep" aria-hidden="true">|</span>
-            {% if include.translation_url %}<a href="{{ include.translation_url | relative_url }}">EN</a>{% else %}<a href="{{ '/en/' | relative_url }}">EN</a>{% endif %}
-          {% endif %}
+          {% if nav_en %}<a href="{{ nav_translation | relative_url }}">DE</a><span class="lang-sep" aria-hidden="true">|</span><strong class="lang-current">EN</strong>
+          {% else %}<strong class="lang-current">DE</strong><span class="lang-sep" aria-hidden="true">|</span><a href="{{ nav_translation | relative_url }}">EN</a>{% endif %}
         </li>
       </ul>
       <div class="cluster">
         <div class="lang-switch lang-switch--bar">
-          {% if page.lang == 'en' %}
-            {% if include.translation_url %}<a href="{{ include.translation_url | relative_url }}">DE</a>{% else %}<a href="{{ '/' | relative_url }}">DE</a>{% endif %}
-            <span class="lang-sep" aria-hidden="true">|</span><strong class="lang-current">EN</strong>
-          {% else %}
-            <strong class="lang-current">DE</strong><span class="lang-sep" aria-hidden="true">|</span>
-            {% if include.translation_url %}<a href="{{ include.translation_url | relative_url }}">EN</a>{% else %}<a href="{{ '/en/' | relative_url }}">EN</a>{% endif %}
-          {% endif %}
+          {% if nav_en %}<a href="{{ nav_translation | relative_url }}">DE</a><span class="lang-sep" aria-hidden="true">|</span><strong class="lang-current">EN</strong>
+          {% else %}<strong class="lang-current">DE</strong><span class="lang-sep" aria-hidden="true">|</span><a href="{{ nav_translation | relative_url }}">EN</a>{% endif %}
         </div>
+        <a class="button button-primary" href="#">{% if nav_en %}Contact{% else %}Kontakt{% endif %}</a>
       </div>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="{% if is_en %}Open navigation{% else %}Navigation öffnen{% endif %}"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="{% if nav_en %}Open navigation{% else %}Navigation öffnen{% endif %}"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>

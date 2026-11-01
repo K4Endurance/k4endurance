@@ -13,6 +13,11 @@ plugins:
 permalink: /blog/:year/:month/:day/:title/
 future: true
 
+# Tools & Rechner (gepflegt über PagesCMS: "Tools (Deutsch)" / "Tools (English)")
+collections:
+  tools:
+    output: true
+
 defaults:
   - scope:
       path: "en"
@@ -24,3 +29,17 @@ defaults:
     values:
       layout: "post"
       lang: "de"
+  - scope:
+      path: "_tools/de"
+      type: "tools"
+    values:
+      layout: "tool"
+      lang: "de"
+      permalink: /tools/:name/
+  - scope:
+      path: "_tools/en"
+      type: "tools"
+    values:
+      layout: "tool"
+      lang: "en"
+      permalink: /en/tools/:name/

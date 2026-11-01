@@ -1,0 +1,56 @@
+{% comment %}
+  Layout für einzelne Tools/Rechner (Collection _tools, gepflegt in PagesCMS).
+  Front Matter: title, description, page_id, status (live|soon), widget, body = Erklärung.
+  Das Widget wird aus _includes/tools/<widget>.html geladen.
+{% endcomment %}
+{% assign translations = site.tools | where: "page_id", page.page_id %}
+{% assign other_lang = nil %}
+{% for translation in translations %}
+  {% if translation.lang != page.lang %}{% assign other_lang = translation %}{% endif %}
+{% endfor %}
+{% if other_lang %}{% assign page_translation_url = other_lang.url %}{% elsif page.lang == 'en' %}{% assign page_translation_url = '/tools/' %}{% else %}{% assign page_translation_url = '/en/tools/' %}{% endif %}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'de' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} – K4 Endurance{% endif %}</title>
+  <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ page.description | strip_html | truncate: 160 }}{% endif %}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&family=Asap+Condensed:wght@600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+  {% include site-nav.html translation_url=page_translation_url %}
+  <main>
+    <section class="page-hero">
+      <div class="container post-header stack reveal">
+        <span class="eyebrow">{% if page.lang == 'en' %}Tools &amp; calculators{% else %}Tools &amp; Rechner{% endif %}</span>
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+      </div>
+    </section>
+    <section class="section surface">
+      <div class="container">
+        {% if page.status == 'soon' %}
+          <p class="tool-soon-note">{% if page.lang == 'en' %}This tool is coming soon.{% else %}Dieses Tool ist bald verfügbar.{% endif %}</p>
+        {% elsif page.widget and page.widget != '' and page.widget != 'none' %}
+          {% assign widget_file = 'tools/' | append: page.widget | append: '.html' %}
+          {% include {{ widget_file }} %}
+        {% endif %}
+        {% assign body_text = content | strip_html | strip %}
+        {% if body_text != '' %}
+          <article class="post-content tool-content">
+            {{ content }}
+          </article>
+        {% endif %}
+        <p class="tool-back"><a class="post-back" href="{% if page.lang == 'en' %}{{ '/en/tools/' | relative_url }}{% else %}{{ '/tools/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}← All tools{% else %}← Alle Tools{% endif %}</a></p>
+      </div>
+    </section>
+  </main>
+  {% include site-footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
