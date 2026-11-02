@@ -2,7 +2,8 @@
 title: Plyometrics session calculator
 slug: plyometrics-calculator
 page_id: plyometrics-rechner
-description: Calculate the weighted total load of your plyometric session – pick an exercise, enter the number of jumps, done.
+description: Calculate the weighted total load of your plyometric session – pick
+  an exercise, enter the number of jumps, done.
 icon: bolt
 status: live
 order: 1
@@ -145,4 +146,4 @@ code: |
 
 Each exercise has a weighting factor that expresses its load relative to a depth jump from 15 cm (factor 1.0). The calculator multiplies the number of jumps per exercise by that factor and adds everything up to the total load of the session.
 
-Source of the weighting factors: Bearsley (2017).
+Source of the weighting factors: **[Brearley et al. (2017)](https://www.researchgate.net/publication/324755442_How_to_monitor_net_plyometric_stress_guidelines_for_the_coach).**
