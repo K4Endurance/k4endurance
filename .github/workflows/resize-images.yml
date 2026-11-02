@@ -28,6 +28,10 @@ jobs:
       - run: python .github/scripts/resize_images.py
       - name: Varianten committen
         run: |
+          if [ ! -d assets/images/resized ]; then
+            echo "Keine Bilder in assets/images/blog – nichts zu tun."
+            exit 0
+          fi
           git add assets/images/resized
           if git diff --cached --quiet; then
             echo "Keine neuen Varianten."
