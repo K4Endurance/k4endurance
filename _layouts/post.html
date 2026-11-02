@@ -34,10 +34,10 @@
         <p class="blog-meta">{{ page.date | date: "%d.%m.%Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
       </div>
     </section>
-    {% if page.image %}<figure class="post-image"><img src="{{ page.image | relative_url }}" alt="{{ page.title }}"></figure>{% endif %}
+    {% if page.image %}<figure class="post-image">{% include responsive-image.html src=page.image alt=page.title sizes="(max-width: 1312px) calc(100vw - 2rem), 1280px" loading="eager" fetchpriority="high" %}</figure>{% endif %}
     <section class="section surface">
       <article class="post-content">
-        {{ content }}
+        {% include content-images.html content=content %}
         <p><a class="post-back" href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}← Back to the journal{% else %}← Zurück zum Journal{% endif %}</a></p>
       </article>
     </section>

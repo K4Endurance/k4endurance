@@ -1,0 +1,25 @@
+{%- comment -%}
+  Gibt nur den srcset-String für ein Bild aus (leer, wenn keine Varianten existieren).
+  Varianten erzeugt .github/workflows/resize-images.yml in /assets/images/resized/.
+  Parameter: src
+{%- endcomment -%}
+{%- assign ss_src = include.src | strip -%}
+{%- unless ss_src contains '://' -%}
+  {%- assign ss_first = ss_src | slice: 0 -%}
+  {%- if ss_first != '/' -%}{%- assign ss_src = ss_src | prepend: '/' -%}{%- endif -%}
+{%- endunless -%}
+{%- assign ss_out = '' -%}
+{%- if ss_src contains '/assets/images/' -%}{%- unless ss_src contains '://' or ss_src contains '/assets/images/resized/' -%}
+  {%- assign ss_ext = ss_src | split: '.' | last -%}
+  {%- assign ss_len = ss_src.size | minus: ss_ext.size | minus: 1 -%}
+  {%- assign ss_stem = ss_src | slice: 0, ss_len | replace_first: '/assets/images/', '/assets/images/resized/' -%}
+  {%- assign ss_widths = '640,1024,1600,1920' | split: ',' -%}
+  {%- for w in ss_widths -%}
+    {%- capture ss_candidate -%}{{ ss_stem }}-{{ w }}.webp{%- endcapture -%}
+    {%- assign ss_found = site.static_files | where: 'path', ss_candidate | first -%}
+    {%- if ss_found -%}
+      {%- capture ss_out -%}{{ ss_out }}{% if ss_out != '' %}, {% endif %}{{ ss_candidate | relative_url }} {{ w }}w{%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endunless -%}{%- endif -%}
+{{- ss_out -}}

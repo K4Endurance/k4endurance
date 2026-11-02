@@ -1,0 +1,35 @@
+{%- comment -%}
+  Ergänzt alle <img>-Tags im Artikeltext um srcset/sizes, lazy loading und decoding.
+  Aufruf im Layout: include content-images.html content=content
+  Bilder ohne erzeugte Varianten (oder externe Bilder) bleiben unverändert,
+  bekommen aber loading="lazy" und decoding="async".
+  Parameter: content (Pflicht), sizes (optional)
+{%- endcomment -%}
+{%- assign ci_sizes = include.sizes | default: '(max-width: 768px) calc(100vw - 2rem), 736px' -%}
+{%- assign ci_parts = include.content | split: '<img ' -%}
+{%- for ci_part in ci_parts -%}
+  {%- if forloop.first -%}
+    {{- ci_part -}}
+  {%- else -%}
+    {%- assign ci_tag = ci_part | split: '>' | first -%}
+    {%- assign ci_extra = '' -%}
+    {%- unless ci_tag contains 'srcset=' -%}
+      {%- assign ci_src = '' -%}
+      {%- if ci_tag contains 'src="' -%}
+        {%- assign ci_src = ci_tag | split: 'src="' | slice: 1 | first | split: '"' | first -%}
+      {%- elsif ci_tag contains "src='" -%}
+        {%- assign ci_src = ci_tag | split: "src='" | slice: 1 | first | split: "'" | first -%}
+      {%- endif -%}
+      {%- if ci_src != '' -%}
+        {%- capture ci_srcset -%}{% include srcset.html src=ci_src %}{%- endcapture -%}
+        {%- if ci_srcset != '' -%}
+          {%- capture ci_extra -%}srcset="{{ ci_srcset }}" sizes="{{ ci_sizes }}" {%- endcapture -%}
+          {%- assign ci_extra = ci_extra | append: ' ' -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endunless -%}
+    {%- unless ci_tag contains 'loading=' -%}{%- assign ci_extra = ci_extra | append: 'loading="lazy" ' -%}{%- endunless -%}
+    {%- unless ci_tag contains 'decoding=' -%}{%- assign ci_extra = ci_extra | append: 'decoding="async" ' -%}{%- endunless -%}
+    {{- '<img ' | append: ci_extra | append: ci_part -}}
+  {%- endif -%}
+{%- endfor -%}

@@ -21,9 +21,15 @@ content:
         options:
           values: ["Training", "Ernährung", "Mentale Stärke", "Material", "Sonstiges"]
       - { name: author, label: "Autor", type: string }
-      - { name: image, label: "Titelbild", type: image }
+      - name: image
+        label: "Titelbild"
+        description: "Hochladen in 1920 × 1080 px (16:9), WebP oder JPEG, max. ca. 300 KB. Hauptmotiv mittig platzieren – auf dem Desktop werden oben und unten je ca. 8 % abgeschnitten. Ordner: blog. Kleinere Versionen fürs Handy werden automatisch erzeugt."
+        type: image
       - { name: excerpt, label: "Kurzbeschreibung (für Übersicht)", type: text }
-      - { name: body, label: "Artikeltext", type: rich-text }
+      - name: body
+        label: "Artikeltext"
+        description: "Bilder im Text: 1600 px breit hochladen (Querformat 3:2 oder 16:9 empfohlen), WebP oder JPEG, max. ca. 200 KB. Ordner: blog."
+        type: rich-text
 
   - name: posts-en
     label: "Blog (English)"
@@ -43,9 +49,15 @@ content:
         options:
           values: ["Training", "Ernährung", "Mentale Stärke", "Material", "Sonstiges"]
       - { name: author, label: "Autor", type: string }
-      - { name: image, label: "Titelbild", type: image }
+      - name: image
+        label: "Titelbild"
+        description: "Hochladen in 1920 × 1080 px (16:9), WebP oder JPEG, max. ca. 300 KB. Hauptmotiv mittig platzieren – auf dem Desktop werden oben und unten je ca. 8 % abgeschnitten. Ordner: blog. Kleinere Versionen fürs Handy werden automatisch erzeugt."
+        type: image
       - { name: excerpt, label: "Kurzbeschreibung (für Übersicht)", type: text }
-      - { name: body, label: "Artikeltext", type: rich-text }
+      - name: body
+        label: "Artikeltext"
+        description: "Bilder im Text: 1600 px breit hochladen (Querformat 3:2 oder 16:9 empfohlen), WebP oder JPEG, max. ca. 200 KB. Ordner: blog."
+        type: rich-text
 
   - name: tools-de
     label: "Tools (Deutsch)"

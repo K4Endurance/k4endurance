@@ -1,0 +1,17 @@
+{%- comment -%}
+  Responsives Bild mit srcset (Varianten siehe _includes/srcset.html).
+  Fehlen Varianten noch, wird einfach das Original ausgeliefert.
+  Parameter: src (Pflicht), alt, sizes, class, loading (lazy|eager), fetchpriority
+{%- endcomment -%}
+{%- assign ri_src = include.src | strip -%}
+{%- unless ri_src contains '://' -%}
+  {%- assign ri_first = ri_src | slice: 0 -%}
+  {%- if ri_first != '/' -%}{%- assign ri_src = ri_src | prepend: '/' -%}{%- endif -%}
+{%- endunless -%}
+{%- capture ri_srcset -%}{% include srcset.html src=ri_src %}{%- endcapture -%}
+<img src="{{ ri_src | relative_url }}"
+  {%- if ri_srcset != '' %} srcset="{{ ri_srcset }}" sizes="{{ include.sizes | default: '100vw' }}"{% endif %}
+  alt="{{ include.alt | escape }}"
+  {%- if include.class %} class="{{ include.class }}"{% endif %}
+  loading="{{ include.loading | default: 'lazy' }}" decoding="async"
+  {%- if include.fetchpriority %} fetchpriority="{{ include.fetchpriority }}"{% endif %}>
