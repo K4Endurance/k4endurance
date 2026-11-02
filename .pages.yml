@@ -3,25 +3,40 @@ media:
   output: /assets/images
 
 content:
-  - name: posts
-    label: "Blog-Artikel"
+  - name: posts-de
+    label: "Blog (Deutsch)"
     type: collection
-    path: '_posts'
+    path: '_posts/de'
     filename: '{year}-{month}-{day}-{fields.slug}.md'
     view:
-      fields: [title, date, lang, category]
+      fields: [title, date, category]
     fields:
       - { name: date, label: "Datum", type: date }
       - { name: title, label: "Titel", type: string }
       - { name: slug, label: "URL-Kürzel (ohne Leerzeichen, z.B. mein-erster-post)", type: string }
-      - { name: page_id, label: "Page ID (gleich für DE+EN Versionen)", type: string }
-      - name: lang
-        label: "Sprache"
+      - { name: page_id, label: "Page ID (gleich für DE+EN-Version, verknüpft den Sprachumschalter)", type: string }
+      - name: category
+        label: "Kategorie"
         type: select
         options:
-          values:
-            - { value: "de", label: "Deutsch" }
-            - { value: "en", label: "English" }
+          values: ["Training", "Ernährung", "Mentale Stärke", "Material", "Sonstiges"]
+      - { name: author, label: "Autor", type: string }
+      - { name: image, label: "Titelbild", type: image }
+      - { name: excerpt, label: "Kurzbeschreibung (für Übersicht)", type: text }
+      - { name: body, label: "Artikeltext", type: rich-text }
+
+  - name: posts-en
+    label: "Blog (English)"
+    type: collection
+    path: '_posts/en'
+    filename: '{year}-{month}-{day}-{fields.slug}.md'
+    view:
+      fields: [title, date, category]
+    fields:
+      - { name: date, label: "Datum", type: date }
+      - { name: title, label: "Titel", type: string }
+      - { name: slug, label: "URL-Kürzel (ohne Leerzeichen, z.B. mein-erster-post)", type: string }
+      - { name: page_id, label: "Page ID (gleich für DE+EN-Version, verknüpft den Sprachumschalter)", type: string }
       - name: category
         label: "Kategorie"
         type: select
@@ -54,14 +69,11 @@ content:
             - { value: "live", label: "Veröffentlicht" }
             - { value: "soon", label: "Bald verfügbar (Karte ohne Link)" }
       - { name: order, label: "Reihenfolge in der Übersicht (1 = zuerst)", type: number, default: 10 }
-      - name: widget
-        label: "Rechner (Programmlogik)"
-        type: select
-        default: "none"
-        options:
-          values:
-            - { value: "plyometrics", label: "Plyometrics Session Rechner" }
-            - { value: "none", label: "Kein Rechner (nur Text)" }
+      - name: code
+        label: "Widget-Code (HTML, CSS & JavaScript)"
+        description: "Kompletter Code des Rechners. Wird 1:1 auf der Seite eingefügt. Tipp: in ein Element mit class=\"tool-widget\" packen, dann passt der Rahmen zum Seitendesign."
+        type: code
+        options: { format: html }
       - { name: meta_title, label: "SEO-Titel (optional)", type: string }
       - { name: meta_description, label: "SEO-Beschreibung (optional)", type: text }
       - { name: body, label: "Erklärung & Hintergrund (unter dem Rechner)", type: rich-text }
@@ -88,31 +100,11 @@ content:
             - { value: "live", label: "Veröffentlicht" }
             - { value: "soon", label: "Bald verfügbar (Karte ohne Link)" }
       - { name: order, label: "Reihenfolge in der Übersicht (1 = zuerst)", type: number, default: 10 }
-      - name: widget
-        label: "Rechner (Programmlogik)"
-        type: select
-        default: "none"
-        options:
-          values:
-            - { value: "plyometrics", label: "Plyometrics Session Rechner" }
-            - { value: "none", label: "Kein Rechner (nur Text)" }
+      - name: code
+        label: "Widget-Code (HTML, CSS & JavaScript)"
+        description: "Kompletter Code des Rechners. Wird 1:1 auf der Seite eingefügt. Tipp: in ein Element mit class=\"tool-widget\" packen, dann passt der Rahmen zum Seitendesign."
+        type: code
+        options: { format: html }
       - { name: meta_title, label: "SEO-Titel (optional)", type: string }
       - { name: meta_description, label: "SEO-Beschreibung (optional)", type: text }
       - { name: body, label: "Erklärung & Hintergrund (unter dem Rechner)", type: rich-text }
-
-  - name: logic-plyometrics
-    label: "Rechner-Logik: Plyometrics"
-    type: file
-    path: '_data/tools/plyometrics.yml'
-    format: yaml
-    fields:
-      - { name: default_reps, label: "Voreingestellte Anzahl Sprünge pro neuer Zeile", type: number, default: 10 }
-      - name: exercises
-        label: "Übungen & Gewichtungsfaktoren (gilt für DE und EN)"
-        type: object
-        list:
-          collapsible:
-            summary: "{name} (×{factor})"
-        fields:
-          - { name: name, label: "Übung", type: string, required: true }
-          - { name: factor, label: "Gewichtungsfaktor (Depth Jump 15 = 1,0)", type: number, required: true, options: { step: 0.01 } }

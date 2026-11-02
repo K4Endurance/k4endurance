@@ -1,7 +1,8 @@
 {% comment %}
   Layout für einzelne Tools/Rechner (Collection _tools, gepflegt in PagesCMS).
-  Front Matter: title, description, page_id, status (live|soon), widget, body = Erklärung.
-  Das Widget wird aus _includes/tools/<widget>.html geladen.
+  Front Matter: title, description, page_id, status (live|soon), code, body = Erklärung.
+  "code" = kompletter Widget-Code (HTML/CSS/JS) aus dem Code-Feld in PagesCMS.
+  Er wird unverändert ausgegeben (kein Liquid).
 {% endcomment %}
 {% assign translations = site.tools | where: "page_id", page.page_id %}
 {% assign other_lang = nil %}
@@ -36,9 +37,8 @@
       <div class="container">
         {% if page.status == 'soon' %}
           <p class="tool-soon-note">{% if page.lang == 'en' %}This tool is coming soon.{% else %}Dieses Tool ist bald verfügbar.{% endif %}</p>
-        {% elsif page.widget and page.widget != '' and page.widget != 'none' %}
-          {% assign widget_file = 'tools/' | append: page.widget | append: '.html' %}
-          {% include {{ widget_file }} %}
+        {% elsif page.code and page.code != '' %}
+          {{ page.code }}
         {% endif %}
         {% assign body_text = content | strip_html | strip %}
         {% if body_text != '' %}

@@ -30,6 +30,12 @@ defaults:
       layout: "post"
       lang: "de"
   - scope:
+      path: "_posts/en"
+      type: "posts"
+    values:
+      lang: "en"
+      permalink: /en/blog/:year/:month/:day/:title/
+  - scope:
       path: "_tools/de"
       type: "tools"
     values:
