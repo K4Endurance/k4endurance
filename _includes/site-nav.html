@@ -19,7 +19,12 @@
   <div class="container">
     <nav class="navbar" aria-label="{% if nav_en %}Primary navigation{% else %}Hauptnavigation{% endif %}">
       <a class="logo" href="{{ nav_home | relative_url }}" aria-label="K4ENDURANCE">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB83V5WeZOBsIWZWt4Z6tUImQV7jZL2WQbsfDwjH_rfrgkms21hHzaxLM1nOLrbOlgFXO7I0Gaq__-QavP1zmyisK05152_FfLfh2uLY-S3ZGYf-MhluhG6Z05ewNDsbpqrkjztoGt8hrUgO4Cyx6nBRTLoJ7rL-scrPj_Umi8zyVlmDSQBVGwn1KUPkb_JApm0a_MpHAMa1Za53EWJkjK4x-ef0W7MGf-YHKsX056kMmvV0MHuwcodu8yaZ-ofyDjA5t5gRvjqat0" alt="K4ENDURANCE Logo">
+        <img src="{{ '/assets/images/logo/K4Endurance-Logo-200px.png' | relative_url }}"
+             srcset="{{ '/assets/images/logo/K4Endurance-Logo-200px.png' | relative_url }} 200w,
+                     {{ '/assets/images/logo/K4Endurance-Logo-400px.png' | relative_url }} 400w,
+                     {{ '/assets/images/logo/K4Endurance-Logo-800px.png' | relative_url }} 800w"
+             sizes="(min-width:900px) 123px, (min-width:700px) 108px, 92px"
+             width="400" height="209" alt="K4ENDURANCE Logo" fetchpriority="high">
       </a>
       <ul class="nav" id="primary-nav">
         <li><a{% if nav_section == 'home' %} class="active" aria-current="page"{% endif %} href="{{ nav_home | relative_url }}">Home</a></li>
