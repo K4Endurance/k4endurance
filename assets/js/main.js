@@ -54,6 +54,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*
     |--------------------------------------------------------------------------
+    | Header-Schatten beim Scrollen
+    |--------------------------------------------------------------------------
+    */
+
+    const header = document.querySelector(".site-header");
+
+    if (header) {
+        const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+        updateHeader();
+        window.addEventListener("scroll", updateHeader, { passive: true });
+    }
+
+    /*
+    |--------------------------------------------------------------------------
     | Scroll Reveal
     |--------------------------------------------------------------------------
     */
@@ -68,7 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (!entry.isIntersecting) return;
 
-                entry.target.classList.add("is-visible");
+                const el = entry.target;
+
+                // Gestaffelt: Kinder (und Karten in Grids) nacheinander
+                if (el.classList.contains("stack")) {
+                    const items = el.querySelectorAll(":scope > :not(.grid), :scope .grid > *");
+                    items.forEach((item, i) => {
+                        const delay = Math.min(i, 6) * 70;
+                        item.style.transitionDelay = `${delay}ms`;
+                        // Verzögerung danach entfernen, damit Hover sofort reagiert
+                        setTimeout(() => { item.style.transitionDelay = ""; }, delay + 650);
+                    });
+                }
+
+                el.classList.add("is-visible");
 
                 observer.unobserve(entry.target);
 
