@@ -73,6 +73,30 @@ document.addEventListener("DOMContentLoaded", () => {
     */
 
     const revealElements = document.querySelectorAll(".reveal");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const WORD_STEP = 70;
+
+    // Hero-Headline in Wörter zerlegen (nur erste Section, nicht bei reduzierter Bewegung)
+    const heroTitle = document.querySelector("main > .section:first-child .stack.reveal > h1");
+
+    if (heroTitle && !reduceMotion) {
+        const words = heroTitle.textContent.trim().split(/\s+/);
+        heroTitle.setAttribute("aria-label", heroTitle.textContent.trim());
+        heroTitle.textContent = "";
+        words.forEach((word, i) => {
+            const outer = document.createElement("span");
+            outer.className = "word";
+            outer.setAttribute("aria-hidden", "true");
+            const inner = document.createElement("span");
+            inner.textContent = word;
+            inner.style.transitionDelay = `${150 + i * WORD_STEP}ms`;
+            outer.appendChild(inner);
+            heroTitle.appendChild(outer);
+            if (i < words.length - 1) heroTitle.appendChild(document.createTextNode(" "));
+        });
+        heroTitle.classList.add("split-words");
+        heroTitle.dataset.words = String(words.length);
+    }
 
     if ("IntersectionObserver" in window) {
 
@@ -87,11 +111,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Gestaffelt: Kinder (und Karten in Grids) nacheinander
                 if (el.classList.contains("stack")) {
                     const items = el.querySelectorAll(":scope > :not(.grid), :scope .grid > *");
-                    items.forEach((item, i) => {
-                        const delay = Math.min(i, 6) * 70;
+                    let offset = 0;
+                    let step = 0;
+                    items.forEach(item => {
+                        // Nach der Hero-Headline warten, bis die Wörter fast da sind
+                        if (item.classList.contains("split-words")) {
+                            offset = 150 + Number(item.dataset.words) * WORD_STEP + 150;
+                            step = 0;
+                            return;
+                        }
+                        const delay = offset + Math.min(step, 6) * 110;
+                        step++;
                         item.style.transitionDelay = `${delay}ms`;
                         // Verzögerung danach entfernen, damit Hover sofort reagiert
-                        setTimeout(() => { item.style.transitionDelay = ""; }, delay + 650);
+                        setTimeout(() => { item.style.transitionDelay = ""; }, delay + 1050);
                     });
                 }
 
@@ -102,7 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         }, {
-            threshold: 0.15
+            // Erst starten, wenn das Element wirklich im Blickfeld ist
+            threshold: 0,
+            rootMargin: "0px 0px -18% 0px"
         });
 
         revealElements.forEach(element => observer.observe(element));
