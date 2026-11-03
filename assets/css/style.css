@@ -126,9 +126,7 @@ ul{
 
     /* Animation */
 
-    --transition:200ms ease;                         /* Farben, Rahmen */
-    --ease-out:cubic-bezier(0.23, 1, 0.32, 1);       /* Ein-/Ausblenden, Feedback */
-    --ease-in-out:cubic-bezier(0.77, 0, 0.175, 1);   /* Bewegung auf dem Screen */
+    --transition:250ms ease;
 
 }
 /* ==========================================================================
@@ -430,24 +428,14 @@ p{
     transition:
         background var(--transition),
         color var(--transition),
-        transform 160ms var(--ease-out),
+        transform var(--transition),
         box-shadow var(--transition);
 
 }
 
-@media (hover:hover) and (pointer:fine){
+.button:hover{
 
-    .button:hover{
-
-        transform:translateY(-2px);
-
-    }
-
-}
-
-.button:active{
-
-    transform:scale(.97);
+    transform:translateY(-2px);
 
 }
 
@@ -516,13 +504,15 @@ p{
     box-shadow:var(--shadow-sm);
 
     transition:
+        transform var(--transition),
         box-shadow var(--transition),
         border-color var(--transition);
 
 }
 
-/* Karten sind nicht klickbar -> kein "Anheben", nur dezente Rückmeldung */
 .card:hover{
+
+    transform:translateY(-6px);
 
     border-color:var(--color-secondary);
 
@@ -619,17 +609,17 @@ p{
 
     object-fit:cover;
 
-    transition:transform .6s var(--ease-out);
+    transition:
+
+        transform .6s ease,
+
+        filter .6s ease;
 
 }
 
-@media (hover:hover) and (pointer:fine){
+.media:hover img{
 
-    .media:hover img{
-
-        transform:scale(1.04);
-
-    }
+    transform:scale(1.04);
 
 }
 
@@ -653,19 +643,15 @@ p{
 
     transform:rotate(2deg);
 
-    transition:transform 300ms var(--ease-out);
+    transition:transform var(--transition);
 
     z-index:0;
 
 }
 
-@media (hover:hover) and (pointer:fine){
+.media-frame:hover::before{
 
-    .media-frame:hover::before{
-
-        transform:rotate(0);
-
-    }
+    transform:rotate(0);
 
 }
 
@@ -1019,7 +1005,7 @@ p{
 
     border-radius:2px;
 
-    transition:transform 200ms var(--ease-in-out),opacity 150ms ease;
+    transition:transform var(--transition),opacity var(--transition);
 
 }
 
@@ -1302,22 +1288,21 @@ p{
    Scroll Reveal
    -------------------------------------------------------------------------- */
 
-/* Nur verstecken, wenn JS läuft – sonst bleibt der Inhalt sichtbar */
-.js .reveal{
+.reveal{
 
     opacity:0;
 
-    transform:translateY(16px);
+    transform:translateY(40px);
 
     transition:
 
-        opacity 500ms var(--ease-out),
+        opacity .8s ease,
 
-        transform 500ms var(--ease-out);
+        transform .8s ease;
 
 }
 
-.js .reveal.is-visible{
+.reveal.is-visible{
 
     opacity:1;
 
@@ -1417,67 +1402,6 @@ p{
 
     .navbar .button{
         padding-inline:1.2rem;
-    }
-
-}
-
-
-/* --------------------------------------------------------------------------
-   Mobile Navigation – sanftes Einblenden
-   -------------------------------------------------------------------------- */
-
-@media (max-width:899px){
-
-    .nav.is-open{
-
-        transition:
-            opacity 150ms var(--ease-out),
-            transform 150ms var(--ease-out);
-
-    }
-
-    @starting-style{
-
-        .nav.is-open{
-
-            opacity:0;
-
-            transform:translateY(-4px);
-
-        }
-
-    }
-
-}
-
-
-/* --------------------------------------------------------------------------
-   Reduced Motion – weniger Bewegung, Fades bleiben
-   -------------------------------------------------------------------------- */
-
-@media (prefers-reduced-motion:reduce){
-
-    .js .reveal{
-
-        transform:none;
-
-        transition:opacity 200ms ease;
-
-    }
-
-    .button:hover,
-    .button:active,
-    .media:hover img,
-    .media-frame:hover::before{
-
-        transform:none;
-
-    }
-
-    .media-frame::before{
-
-        transform:none;
-
     }
 
 }
